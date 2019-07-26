@@ -44,14 +44,14 @@ const GET_POSTS = `
 const allPosts = []
 
 /**
- * Here we store an array of postsPaths. For each xx amount of posts
+ * Here we store an array of blogPages. For each xx amount of posts
  * we want to create a postsPath so users can browse
  * chunks of data at a time, much like a traditional
  * WordPress paginated archive page.
  *
  * @type {Array}
  */
-const postsPaths = []
+const blogPages = []
 
 /**
  * We need to track the page number so we can output the paginated
@@ -97,7 +97,7 @@ module.exports = async ({ actions, graphql }, options) => {
        * This is the url the page will live at
        * @type {string}
        */
-      const postsPathPath = !variables.after
+      const blogPagePath = !variables.after
         ? `${postsPath}/`
         : `${postsPath}${paginationPrefix}/${pageNumber + 1}`
 
@@ -112,8 +112,8 @@ module.exports = async ({ actions, graphql }, options) => {
        *
        * @type {{path: string, component: string, context: {nodes: *, pageNumber: number, hasNextPage: *}}}
        */
-      postsPaths[pageNumber] = {
-        path: postsPathPath,
+      blogPages[pageNumber] = {
+        path: blogPagePath,
         component: blogTemplate,
         context: {
           ids: nodeIds,
@@ -177,11 +177,11 @@ module.exports = async ({ actions, graphql }, options) => {
       })
 
     /**
-     * Map over the `postsPaths` array to create the
+     * Map over the `blogPages` array to create the
      * paginated blogroll pages
      */
-    postsPaths &&
-      postsPaths.map(archivePage => {
+    blogPages &&
+      blogPages.map(archivePage => {
         console.log(`createpostsPath ${archivePage.context.pageNumber}`)
         createPage(archivePage)
       })
