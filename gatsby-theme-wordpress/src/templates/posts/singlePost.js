@@ -2,18 +2,21 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Styled } from "theme-ui"
 import Layout from "../../components/Layout"
+import SEO from "../../components/Seo"
 
 const SinglePost = ({ data }) => {
   const {
     content,
     featuredImage,
     title,
+    excerpt,
     tags,
     categories,
   } = data.wpgraphql.post
 
   return (
     <Layout>
+      <SEO title={title} description={excerpt} />
       {featuredImage && (
         <img src={featuredImage.sourceUrl} alt={featuredImage.altText} />
       )}
@@ -36,6 +39,7 @@ export const pageQuery = graphql`
       post(id: $id) {
         title
         content
+        excerpt
         featuredImage {
           sourceUrl
         }

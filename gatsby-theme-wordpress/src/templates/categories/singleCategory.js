@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import Layout from "../../components/Layout"
+import SEO from "../../components/Seo"
 
 const Category = ({ data, pageContext }) => {
   const { name, slug, posts } = data.wpgraphql.category
@@ -8,6 +9,7 @@ const Category = ({ data, pageContext }) => {
 
   return (
     <Layout>
+      <SEO title={name} description={`Posts for ${name} category`} />
       <h1>Posts for category:{name}</h1>
       {posts.nodes &&
         posts.nodes.map(post => (

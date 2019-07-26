@@ -48,6 +48,7 @@ module.exports = options => {
           },
         },
       },
+      `gatsby-plugin-react-helmet`,
     ],
   }
 }
