@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+import { Link } from "gatsby"
 
 const Pagination = ({
   pageNumber,
   hasNextPage,
   allPosts,
   itemsPerPage,
-  blogPage,
+  postsPath,
   paginationPrefix,
 }) => (
   <div className="pagination">
@@ -15,7 +15,7 @@ const Pagination = ({
         <Link
           to={
             pageNumber > 2
-              ? `${blogPage}${paginationPrefix}/${pageNumber - 1}`
+              ? `${postsPath}${paginationPrefix}/${pageNumber - 1}`
               : `/`
           }
         >
@@ -28,7 +28,9 @@ const Pagination = ({
       <Link
         key={`pagination-number${i + 1}`}
         to={
-          i === 0 ? `${blogPage}/` : `${blogPage}/${paginationPrefix}/${i + 1}`
+          i === 0
+            ? `${postsPath}/`
+            : `${postsPath}/${paginationPrefix}/${i + 1}`
         }
       >
         {i + 1}
@@ -36,7 +38,7 @@ const Pagination = ({
     ))}
     {hasNextPage && (
       <button>
-        <Link to={`${blogPage}/${paginationPrefix}/${pageNumber + 1}`}>
+        <Link to={`${postsPath}/${paginationPrefix}/${pageNumber + 1}`}>
           Next Posts
         </Link>
       </button>

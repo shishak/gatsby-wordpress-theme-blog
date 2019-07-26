@@ -44,14 +44,14 @@ const GET_POSTS = `
 const allPosts = []
 
 /**
- * Here we store an array of blogPages. For each xx amount of posts
- * we want to create a blogPage so users can browse
+ * Here we store an array of postsPaths. For each xx amount of posts
+ * we want to create a postsPath so users can browse
  * chunks of data at a time, much like a traditional
  * WordPress paginated archive page.
  *
  * @type {Array}
  */
-const blogPages = []
+const postsPaths = []
 
 /**
  * We need to track the page number so we can output the paginated
@@ -68,7 +68,7 @@ let pageNumber = 0
  * @returns {Promise<void>}
  */
 module.exports = async ({ actions, graphql }, options) => {
-  const { blogPage, paginationPrefix, postsPrefix, postsPerPage } = options
+  const { postsPath, paginationPrefix, postsPrefix, postsPerPage } = options
   /**
    * This is the method from Gatsby that we're going
    * to use to create pages in our static site.
@@ -97,9 +97,9 @@ module.exports = async ({ actions, graphql }, options) => {
        * This is the url the page will live at
        * @type {string}
        */
-      const blogPagePath = !variables.after
-        ? `${blogPage}/`
-        : `${blogPage}${paginationPrefix}/${pageNumber + 1}`
+      const postsPathPath = !variables.after
+        ? `${postsPath}/`
+        : `${postsPath}${paginationPrefix}/${pageNumber + 1}`
 
       /**
        * The IDs of the posts which were got from GraphQL.
@@ -107,13 +107,13 @@ module.exports = async ({ actions, graphql }, options) => {
       const nodeIds = nodes.map(node => node.postId)
 
       /**
-       * Add config for the blogPage to the blogPage array
+       * Add config for the postsPath to the postsPath array
        * for creating later
        *
        * @type {{path: string, component: string, context: {nodes: *, pageNumber: number, hasNextPage: *}}}
        */
-      blogPages[pageNumber] = {
-        path: blogPagePath,
+      postsPaths[pageNumber] = {
+        path: postsPathPath,
         component: blogTemplate,
         context: {
           ids: nodeIds,
@@ -177,12 +177,12 @@ module.exports = async ({ actions, graphql }, options) => {
       })
 
     /**
-     * Map over the `blogPages` array to create the
+     * Map over the `postsPaths` array to create the
      * paginated blogroll pages
      */
-    blogPages &&
-      blogPages.map(archivePage => {
-        console.log(`createBlogPage ${archivePage.context.pageNumber}`)
+    postsPaths &&
+      postsPaths.map(archivePage => {
+        console.log(`createpostsPath ${archivePage.context.pageNumber}`)
         createPage(archivePage)
       })
   })

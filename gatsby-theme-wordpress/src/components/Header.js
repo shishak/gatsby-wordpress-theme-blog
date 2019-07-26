@@ -1,6 +1,7 @@
-import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
-import Menu from './Menu'
+import React from "react"
+import { useStaticQuery, graphql, Link } from "gatsby"
+import { Container, Header as StyledHeader } from "theme-ui"
+import Menu from "./Menu"
 
 const Header = () => {
   const data = useStaticQuery(graphql`
@@ -18,16 +19,18 @@ const Header = () => {
   const { title, description, url } = data.wpgraphql.generalSettings
 
   return (
-    <header id="masthead" className="site-header">
-      <p className="site-title">
-        <Link to="/" rel="home">
-          {title}
-        </Link>
-      </p>
+    <StyledHeader>
+      <Container>
+        <p className="site-title">
+          <Link to="/" rel="home">
+            {title}
+          </Link>
+        </p>
 
-      <p className="site-description">{description}</p>
-      <Menu wordPressUrl={url} />
-    </header>
+        <p className="site-description">{description}</p>
+        <Menu wordPressUrl={url} />
+      </Container>
+    </StyledHeader>
   )
 }
 

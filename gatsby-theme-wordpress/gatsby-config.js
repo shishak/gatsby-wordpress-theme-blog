@@ -1,14 +1,19 @@
 module.exports = ({
   wordPressUrl = `http://alexandraspalato.com/webstantly/`,
-  blogPage = ``,
+  postsPath = ``,
   paginationPrefix = `/page`,
   postsPrefix = `blog`,
   postsPerPage = 10,
+  colors = {
+    primary: "tomato",
+    secondary: "olive",
+  },
 }) => ({
   siteMetadata: {
     title: "Gatsby Theme Jam Example Submission",
   },
   plugins: [
+    `gatsby-plugin-theme-ui`,
     {
       resolve: `gatsby-source-graphql`,
       options: {
@@ -18,6 +23,14 @@ module.exports = ({
         fieldName: `wpgraphql`,
         // Url to query from
         url: `${wordPressUrl}/graphql`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        google: {
+          families: ["Playfair Display", "Montserrat", "Oswald"],
+        },
       },
     },
   ],

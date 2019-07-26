@@ -18,9 +18,13 @@ module.exports = {
       options: {
         wordPressUrl: config.wordPressUrl,
         postsPrefix: `posts`,
-        blogPage: `blog`,
-        paginationPrefix: ``,
+        postsPath: ``,
+        paginationPrefix: `blog`,
         postsPerPage: 5,
+        colors: {
+          primary: "tomato",
+          secondary: "olive",
+        },
       },
     },
   ],

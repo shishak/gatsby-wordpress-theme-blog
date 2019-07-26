@@ -1,6 +1,6 @@
-import React from 'react'
-import { graphql, useStaticQuery, Link } from 'gatsby'
-import { createLocalLink } from '../utils'
+import React from "react"
+import { graphql, useStaticQuery, Link } from "gatsby"
+import { createLocalLink } from "../utils"
 
 const MENU_QUERY = graphql`
   fragment MenuFields on WPGraphQL_MenuItem {
@@ -26,42 +26,55 @@ const MENU_QUERY = graphql`
         }
       }
     }
+    sitePlugin(name: { eq: "gatsby-theme-wordpress" }) {
+      pluginOptions {
+        postsPath
+      }
+    }
   }
 `
 
-const renderLink = (menuItem, wordPressUrl) =>
-  menuItem.connectedObject.__typename === 'WPGraphQL_MenuItem' ? (
-    <a href={menuItem.url} target="_blank" rel="noopener noreferrer">
-      {menuItem.label}
-    </a>
+const renderLink = (menuItem, wordPressUrl, postsPath) =>
+  menuItem.connectedObject.__typename === "WPGraphQL_MenuItem" ? (
+    menuItem.url === `/${postsPath}` ? (
+      <Link to={`/${postsPath}`}> {menuItem.label}</Link>
+    ) : (
+      <a href={menuItem.url} target="_blank" rel="noopener noreferrer">
+        {menuItem.label}
+      </a>
+    )
   ) : createLocalLink(menuItem.url, wordPressUrl) ? (
-    <Link to={createLocalLink(menuItem.url, wordPressUrl)}>
-      {menuItem.label}
-    </Link>
+    menuItem.url === wordPressUrl ? (
+      <Link to="/"> {menuItem.label}</Link>
+    ) : (
+      <Link to={createLocalLink(menuItem.url, wordPressUrl)}>
+        {menuItem.label}
+      </Link>
+    )
   ) : (
     menuItem.label
   )
 
-const renderMenuItem = (menuItem, wordPressUrl) => {
+const renderMenuItem = (menuItem, wordPressUrl, postsPath) => {
   if (menuItem.childItems && menuItem.childItems.nodes.length) {
     return renderSubMenu(menuItem, wordPressUrl)
   } else {
     return (
       <li className="menu-item" key={menuItem.id}>
-        {renderLink(menuItem, wordPressUrl)}
+        {renderLink(menuItem, wordPressUrl, postsPath)}
       </li>
     )
   }
 }
 
-const renderSubMenu = (menuItem, wordPressUrl) => {
+const renderSubMenu = (menuItem, wordPressUrl, postsPath) => {
   return (
     <li className="has-subMenu menu-item" key={menuItem.id}>
-      {renderLink(menuItem, wordPressUrl)}
+      {renderLink(menuItem, wordPressUrl, postsPath)}
 
       <ul className="menuItemGroup sub-menu">
         {menuItem.childItems.nodes.map(item =>
-          renderMenuItem(item, wordPressUrl)
+          renderMenuItem(item, wordPressUrl, postsPath)
         )}
       </ul>
     </li>
@@ -70,15 +83,16 @@ const renderSubMenu = (menuItem, wordPressUrl) => {
 
 const Menu = ({ wordPressUrl }) => {
   const data = useStaticQuery(MENU_QUERY)
+  const { postsPath } = data.sitePlugin.pluginOptions
 
   if (data.wpgraphql.menuItems) {
     return (
       <ul role="menu">
         {data.wpgraphql.menuItems.nodes.map(menuItem => {
           if (menuItem.childItems.nodes.length) {
-            return renderSubMenu(menuItem, wordPressUrl)
+            return renderSubMenu(menuItem, wordPressUrl, postsPath)
           } else {
-            return renderMenuItem(menuItem, wordPressUrl)
+            return renderMenuItem(menuItem, wordPressUrl, postsPath)
           }
         })}
       </ul>

@@ -1,7 +1,7 @@
-import React from 'react'
-import Layout from '../../components/Layout'
-import { graphql, Link } from 'gatsby'
-import Pagination from '../../components/Pagination'
+import React from "react"
+import Layout from "../../components/Layout"
+import { graphql, Link } from "gatsby"
+import Pagination from "../../components/Pagination"
 
 const Blog = ({ data, pageContext }) => {
   const posts = data.wpgraphql.posts.nodes
@@ -10,7 +10,7 @@ const Blog = ({ data, pageContext }) => {
     hasNextPage,
     postsPerPage,
     allPosts,
-    options: { postsPrefix, blogPage, paginationPrefix },
+    options: { postsPrefix, postsPath, paginationPrefix },
   } = pageContext
   return (
     <Layout>
@@ -42,7 +42,7 @@ const Blog = ({ data, pageContext }) => {
         hasNextPage={hasNextPage}
         allPosts={allPosts}
         itemsPerPage={postsPerPage}
-        blogPage={blogPage}
+        postsPath={postsPath}
         paginationPrefix={paginationPrefix}
       />
     </Layout>

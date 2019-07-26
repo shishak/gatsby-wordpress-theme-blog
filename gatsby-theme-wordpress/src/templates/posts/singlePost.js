@@ -1,6 +1,7 @@
-import React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../../components/Layout'
+import React from "react"
+import { graphql } from "gatsby"
+import { Styled } from "theme-ui"
+import Layout from "../../components/Layout"
 
 const SinglePost = ({ data }) => {
   const {
@@ -17,7 +18,10 @@ const SinglePost = ({ data }) => {
         <img src={featuredImage.sourceUrl} alt={featuredImage.altText} />
       )}
 
-      <h1 className="page-title" dangerouslySetInnerHTML={{ __html: title }} />
+      <Styled.h1
+        className="page-title"
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
 
       <p className="content" dangerouslySetInnerHTML={{ __html: content }} />
     </Layout>

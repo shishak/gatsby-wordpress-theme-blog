@@ -73,9 +73,10 @@ module.exports = async ({ actions, graphql }) => {
 
   await fetchPages({ first: 100, after: null }).then(allPages => {
     allPages.map(page => {
+      const path = page.uri === "home" ? `/` : `/${page.uri}`
       console.log(`create page: ${page.uri}`)
       createPage({
-        path: `/${page.uri}`,
+        path,
         component: pageTemplate,
         context: page,
       })
