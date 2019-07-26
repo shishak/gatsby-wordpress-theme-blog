@@ -3,6 +3,7 @@
  * @see https://theme-ui.com/
  * @see https://theme-ui.com/gatsby-plugin/
  */
+
 const heading = {
   fontFamily: "heading",
   lineHeight: "heading",
@@ -13,6 +14,7 @@ export default {
     text: "#232129",
     background: "#f5f5f5",
     primary: "tomato",
+    secondary: "olive",
     muted: "#bbb ",
   },
   fonts: {

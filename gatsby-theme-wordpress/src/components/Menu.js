@@ -38,6 +38,8 @@ const renderLink = (menuItem, wordPressUrl, postsPath) =>
   menuItem.connectedObject.__typename === "WPGraphQL_MenuItem" ? (
     menuItem.url === `/${postsPath}` ? (
       <Link to={`/${postsPath}`}> {menuItem.label}</Link>
+    ) : menuItem.url === `#` ? (
+      menuItem.label
     ) : (
       <a href={menuItem.url} target="_blank" rel="noopener noreferrer">
         {menuItem.label}
