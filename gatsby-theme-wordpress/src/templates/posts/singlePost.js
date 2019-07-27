@@ -22,33 +22,8 @@ export const pageQuery = graphql`
   query GET_POST($id: ID!) {
     wpgraphql {
       post(id: $id) {
-        title
-        excerpt
-        date
-        featuredImage {
-          sourceUrl
-          altText
-        }
-        author {
-          name
-          slug
-          avatar {
-            url
-          }
-        }
-        tags {
-          nodes {
-            name
-            link
-          }
-        }
-        categories {
-          nodes {
-            name
-            slug
-            id
-          }
-        }
+        content
+        ...PostTemplateFragment
       }
     }
   }

@@ -35,35 +35,7 @@ export const pageQuery = graphql`
         slug
         posts(first: 100) {
           nodes {
-            title
-            uri
-            date
-            excerpt
-            featuredImage {
-              altText
-              sourceUrl
-            }
-            author {
-              name
-              slug
-              avatar {
-                url
-              }
-            }
-            categories {
-              nodes {
-                slug
-                name
-                id
-              }
-            }
-            tags {
-              nodes {
-                slug
-                name
-                id
-              }
-            }
+            ...PostTemplateFragment
           }
         }
       }

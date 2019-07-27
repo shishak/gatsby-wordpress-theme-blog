@@ -41,40 +41,46 @@ const Blog = ({ data, pageContext }) => {
 
 export default Blog
 
+export const query = graphql`
+  fragment PostTemplateFragment on WPGraphQL_Post {
+    id
+    uri
+    title
+    excerpt
+    date
+    featuredImage {
+      altText
+      sourceUrl
+    }
+    categories {
+      nodes {
+        id
+        slug
+        name
+      }
+    }
+    author {
+      name
+      slug
+      avatar {
+        url
+      }
+    }
+    tags {
+      nodes {
+        name
+        link
+      }
+    }
+  }
+`
+
 export const pageQuery = graphql`
   query GET_POSTS($ids: [ID], $postsPerPage: Int!) {
     wpgraphql {
       posts(first: $postsPerPage, where: { in: $ids }) {
         nodes {
-          id
-          uri
-          title
-          excerpt
-          date
-          featuredImage {
-            altText
-            sourceUrl
-          }
-          categories {
-            nodes {
-              id
-              slug
-              name
-            }
-          }
-          author {
-            name
-            slug
-            avatar {
-              url
-            }
-          }
-          tags {
-            nodes {
-              name
-              link
-            }
-          }
+          ...PostTemplateFragment
         }
       }
     }
