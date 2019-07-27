@@ -8,13 +8,13 @@ const WithLink = ({ post, location, children, postsPrefix }) =>
     <Link to={`/${postsPrefix}/${post.uri}`}>{children}</Link>
   )
 
-const PostEntryMedia = ({ post, location }) => {
+const PostEntryMedia = ({ post, location, postsPrefix }) => {
   const img = post.featuredImage
 
   return (
     <>
       {img && (
-        <WithLink location={location} post={post}>
+        <WithLink location={location} post={post} postsPrefix={postsPrefix}>
           <img src={img.sourceUrl} alt={img.altText} />
         </WithLink>
       )}

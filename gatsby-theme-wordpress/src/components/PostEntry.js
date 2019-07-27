@@ -9,7 +9,11 @@ import PostEntryMeta from "./PostEntryMeta"
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (
     <article>
-      <PostEntryMedia location={location} post={post} />
+      <PostEntryMedia
+        location={location}
+        post={post}
+        postsPrefix={postsPrefix}
+      />
       <PostEntryTitle
         location={location}
         post={post}
