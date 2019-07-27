@@ -46,8 +46,18 @@ export const pageQuery = graphql`
             author {
               name
               slug
+              avatar {
+                url
+              }
             }
             categories {
+              nodes {
+                slug
+                name
+                id
+              }
+            }
+            tags {
               nodes {
                 slug
                 name

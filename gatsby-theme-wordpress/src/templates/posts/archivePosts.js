@@ -62,6 +62,19 @@ export const pageQuery = graphql`
               name
             }
           }
+          author {
+            name
+            slug
+            avatar {
+              url
+            }
+          }
+          tags {
+            nodes {
+              name
+              link
+            }
+          }
         }
       }
     }
