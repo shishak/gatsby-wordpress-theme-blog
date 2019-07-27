@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../../components/Layout"
 import { graphql, Link } from "gatsby"
+import PostEntry from "../../components/PostEntry"
 import Pagination from "../../components/Pagination"
 import SEO from "../../components/Seo"
 
@@ -19,25 +20,12 @@ const Blog = ({ data, pageContext }) => {
       {data &&
         data.wpgraphql &&
         posts.map(post => (
-          <article key={post.id}>
-            {post.featuredImage && (
-              <img
-                src={post.featuredImage.sourceUrl}
-                alt={post.featuredImage.altText}
-              />
-            )}
-
-            <h2>
-              <Link
-                to={`/${postsPrefix}/${post.uri}`}
-                dangerouslySetInnerHTML={{ __html: post.title }}
-              />
-            </h2>
-            <p
-              className="content"
-              dangerouslySetInnerHTML={{ __html: post.excerpt }}
-            />
-          </article>
+          <PostEntry
+            key={post.id}
+            location="archive"
+            post={post}
+            postsPrefix={postsPrefix}
+          />
         ))}
       <Pagination
         pageNumber={pageNumber}

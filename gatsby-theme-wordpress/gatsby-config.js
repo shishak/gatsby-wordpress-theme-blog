@@ -5,10 +5,6 @@ module.exports = options => {
     paginationPrefix = `/page`,
     postsPrefix = ``,
     postsPerPage = 10,
-    colors = {
-      primary: "tomato",
-      secondary: "olive",
-    },
   } = options
 
   return {

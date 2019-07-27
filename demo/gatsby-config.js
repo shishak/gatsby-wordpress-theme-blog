@@ -21,10 +21,6 @@ module.exports = {
         postsPath: `blog`,
         paginationPrefix: ``,
         postsPerPage: 5,
-        colors: {
-          primary: "tomato",
-          secondary: "olive",
-        },
       },
     },
   ],

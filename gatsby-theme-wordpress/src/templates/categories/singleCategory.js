@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import PostEntry from "../../components/PostEntry"
 import Layout from "../../components/Layout"
 import SEO from "../../components/Seo"
 
@@ -13,18 +14,12 @@ const Category = ({ data, pageContext }) => {
       <h1>Posts for category:{name}</h1>
       {posts.nodes &&
         posts.nodes.map(post => (
-          <article key={post.id}>
-            <h2>
-              <Link
-                to={`/${postsPrefix}/${post.uri}`}
-                dangerouslySetInnerHTML={{ __html: post.title }}
-              />
-            </h2>
-            <p
-              className="content"
-              dangerouslySetInnerHTML={{ __html: post.excerpt }}
-            />
-          </article>
+          <PostEntry
+            key={post.id}
+            location="archive"
+            post={post}
+            postsPrefix={postsPrefix}
+          />
         ))}
     </Layout>
   )
