@@ -4,7 +4,7 @@ import Date from "./Date"
 import PostEntryTitle from "./PostEntryTitle"
 import PostEntryMedia from "./PostEntryMedia"
 import PostEntryContent from "./PostEntryContent"
-// import PostEntryMeta from "./PostEntryMeta"
+import PostEntryMeta from "./PostEntryMeta"
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (
@@ -17,14 +17,12 @@ const PostEntry = ({ post, location, postsPrefix }) => {
       />
       <Date date={post.date} />
       <PostEntryContent location={location} post={post} />
-      {/* <EntryFooter>
-        <PostEntryMeta location={location} post={post} />
+      <div className="EntryFooter">
+        <PostEntryMeta post={post} />
         {location !== "single" && (
-          <Link to={`posts${frontmatter.slug}`}>
-            <ReadMore>Read More</ReadMore>
-          </Link>
+          <Link to={`${postsPrefix}/${post.uri}`}>Read More</Link>
         )}
-      </EntryFooter> */}
+      </div>
     </article>
   )
 }

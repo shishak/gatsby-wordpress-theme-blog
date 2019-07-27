@@ -55,6 +55,13 @@ export const pageQuery = graphql`
             altText
             sourceUrl
           }
+          categories {
+            nodes {
+              id
+              slug
+              name
+            }
+          }
         }
       }
     }
