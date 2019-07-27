@@ -1,7 +1,7 @@
 const createPosts = require(`./utils/createPosts`)
 const createSitePages = require(`./utils/createSitePages`)
 const createCategories = require(`./utils/createCategories`)
-// const createTags = require(`./utils/createTags`)
+const createTags = require(`./utils/createTags`)
 // const createUsers = require(`./utils/createUsers`)
 
 exports.createPages = async ({ actions, graphql, reporter }, options) => {
@@ -9,6 +9,6 @@ exports.createPages = async ({ actions, graphql, reporter }, options) => {
   await createPosts({ actions, graphql }, options)
   await createSitePages({ actions, graphql }, options)
   await createCategories({ actions, graphql }, options)
-  // await createTags({ actions, graphql })
+  await createTags({ actions, graphql }, options)
   // await createUsers({ actions, graphql })
 }

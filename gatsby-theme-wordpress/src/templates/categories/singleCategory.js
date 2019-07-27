@@ -1,11 +1,11 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import PostEntry from "../../components/PostEntry"
 import Layout from "../../components/Layout"
 import SEO from "../../components/Seo"
 
 const Category = ({ data, pageContext }) => {
-  const { name, slug, posts } = data.wpgraphql.category
+  const { name, posts } = data.wpgraphql.category
   const { postsPrefix } = pageContext.options
 
   return (
@@ -42,7 +42,6 @@ export const pageQuery = graphql`
             featuredImage {
               altText
               sourceUrl
-              title
             }
             author {
               name
