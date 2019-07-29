@@ -7,9 +7,12 @@ const PostEntryTitle = ({ post, location, postsPrefix }) => {
   return (
     <>
       {location === "single" ? (
-        <h1 dangerouslySetInnerHTML={{ __html: title }} />
+        <h1
+          className="entry-title"
+          dangerouslySetInnerHTML={{ __html: title }}
+        />
       ) : (
-        <h2>
+        <h2 className="entry-title">
           <Link
             to={`${postsPrefix}/${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}

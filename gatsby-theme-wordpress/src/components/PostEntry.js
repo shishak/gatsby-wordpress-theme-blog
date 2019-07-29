@@ -1,33 +1,38 @@
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
-import Date from "./Date"
 import PostEntryTitle from "./PostEntryTitle"
 import PostEntryMedia from "./PostEntryMedia"
 import PostEntryContent from "./PostEntryContent"
 import PostEntryMeta from "./PostEntryMeta"
+import PostEntryInfo from "./PostEntryInfo"
+import { Article } from "../styles/elements"
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (
-    <article>
+    <Article>
       <PostEntryMedia
         location={location}
         post={post}
         postsPrefix={postsPrefix}
       />
-      <PostEntryTitle
-        location={location}
-        post={post}
-        postsPrefix={postsPrefix}
-      />
-      <Date date={post.date} />
-      <PostEntryContent location={location} post={post} />
-      <div className="EntryFooter">
-        <PostEntryMeta post={post} />
-        {location !== "single" && (
-          <Link to={`${postsPrefix}/${post.uri}`}>Read More</Link>
-        )}
+      <div className="content">
+        <PostEntryTitle
+          location={location}
+          post={post}
+          postsPrefix={postsPrefix}
+        />
+        <PostEntryInfo className="entry-info" post={post} />
+        <PostEntryContent location={location} post={post} />
+        <div className="entry-footer">
+          <PostEntryMeta post={post} />
+          {location !== "single" && (
+            <Link to={`${postsPrefix}/${post.uri}`}>Read More</Link>
+          )}
+        </div>
       </div>
-    </article>
+    </Article>
   )
 }
 

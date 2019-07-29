@@ -1,6 +1,9 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { useStaticQuery, graphql, Link } from "gatsby"
-import { Container, Header as StyledHeader } from "theme-ui"
+import { Container } from "../styles/Layouts"
+
+import { Header as StyledHeader } from "../styles/Layouts"
 import Menu from "./Menu"
 
 const Header = () => {
@@ -8,7 +11,6 @@ const Header = () => {
     query SiteTitleQuery {
       wpgraphql {
         generalSettings {
-          description
           title
           url
         }
@@ -16,18 +18,17 @@ const Header = () => {
     }
   `)
 
-  const { title, description, url } = data.wpgraphql.generalSettings
+  const { title, url } = data.wpgraphql.generalSettings
 
   return (
     <StyledHeader>
       <Container>
-        <p className="site-title">
-          <Link to="/" rel="home">
+        <h1 sx={{ textTransform: "uppercase", letterSpacing: 3 }}>
+          <Link sx={{ borderColor: "primary" }} to="/" rel="home">
             {title}
           </Link>
-        </p>
+        </h1>
 
-        <p className="site-description">{description}</p>
         <Menu wordPressUrl={url} />
       </Container>
     </StyledHeader>

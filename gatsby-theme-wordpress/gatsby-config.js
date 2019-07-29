@@ -40,7 +40,7 @@ module.exports = options => {
         resolve: `gatsby-plugin-web-font-loader`,
         options: {
           google: {
-            families: ["Playfair Display", "Montserrat", "Oswald"],
+            families: ["Raleway", "Oswald", "Inconsolata"],
           },
         },
       },

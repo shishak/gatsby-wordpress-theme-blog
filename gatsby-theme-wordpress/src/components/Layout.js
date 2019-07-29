@@ -1,27 +1,21 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-// import React from "react"
+import { jsx, ThemeProvider } from "theme-ui"
+import theme from "gatsby-plugin-theme-ui"
 import Header from "./Header.js"
 import Footer from "./Footer.js"
-import { css, Global } from "@emotion/core"
-import { Layout as StyledLayout, Main, Container, Styled } from "theme-ui"
+
+import { GlobalStyles } from "../styles"
+import { Layout as StyledLayout } from "theme-ui"
+import { Container } from "../styles/Layouts"
 
 const Layout = ({ children }) => (
-  <StyledLayout>
-    <Global
-      styles={css`
-        body {
-          margin: 0;
-        }
-      `}
-    />
-
-    <Header />
-    <Main>
-      <Container>{children}</Container>
-    </Main>
-    <Footer />
-  </StyledLayout>
+  <ThemeProvider theme={theme}>
+    <StyledLayout>
+      <Header />
+      <Container sx={{ my: 6 }}>{children}</Container>
+      <Footer />
+    </StyledLayout>
+  </ThemeProvider>
 )
 
 export default Layout

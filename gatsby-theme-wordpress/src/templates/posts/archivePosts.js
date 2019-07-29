@@ -1,6 +1,8 @@
+/** @jsx jsx */
+import { jsx, ThemeProvider } from "theme-ui"
 import React from "react"
 import Layout from "../../components/Layout"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import PostEntry from "../../components/PostEntry"
 import Pagination from "../../components/Pagination"
 import SEO from "../../components/Seo"
@@ -17,6 +19,7 @@ const Blog = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title="blog" description="this is the posts page" />
+
       {data &&
         data.wpgraphql &&
         posts.map(post => (
@@ -27,6 +30,7 @@ const Blog = ({ data, pageContext }) => {
             postsPrefix={postsPrefix}
           />
         ))}
+
       <Pagination
         pageNumber={pageNumber}
         hasNextPage={hasNextPage}

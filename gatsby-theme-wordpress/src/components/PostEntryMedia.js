@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { jsx, ThemeProvider } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
 
@@ -15,7 +17,13 @@ const PostEntryMedia = ({ post, location, postsPrefix }) => {
     <>
       {img && (
         <WithLink location={location} post={post} postsPrefix={postsPrefix}>
-          <img src={img.sourceUrl} alt={img.altText} />
+          <div
+            className="entry-media"
+            sx={{
+              background: `url(${img.sourceUrl}) 50% 50% / cover`,
+              height: 500,
+            }}
+          />
         </WithLink>
       )}
     </>

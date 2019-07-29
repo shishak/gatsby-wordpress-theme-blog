@@ -1,15 +1,13 @@
 import React from "react"
 import Categories from "./Categories"
 import Tags from "./Tags"
-import Author from "./Author"
 
 const PostEntryMeta = ({ post }) => {
   return (
-    <>
+    <div className="entry-meta">
       <Categories post={post} />
       <Tags post={post} />
-      <Author post={post} />
-    </>
+    </div>
   )
 }
 
