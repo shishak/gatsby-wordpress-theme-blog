@@ -1,7 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { createLocalLink } from "../utils"
-import { Menu as StyledMenu } from "../styles/Layouts/Menu"
 
 const MENU_QUERY = graphql`
   fragment MenuFields on WPGraphQL_MenuItem {
@@ -90,17 +89,15 @@ const Menu = ({ wordPressUrl }) => {
 
   if (data.wpgraphql.menuItems) {
     return (
-      <StyledMenu>
-        <ul role="menu">
-          {data.wpgraphql.menuItems.nodes.map(menuItem => {
-            if (menuItem.childItems.nodes.length) {
-              return renderSubMenu(menuItem, wordPressUrl, postsPath)
-            } else {
-              return renderMenuItem(menuItem, wordPressUrl, postsPath)
-            }
-          })}
-        </ul>
-      </StyledMenu>
+      <ul role="menu">
+        {data.wpgraphql.menuItems.nodes.map(menuItem => {
+          if (menuItem.childItems.nodes.length) {
+            return renderSubMenu(menuItem, wordPressUrl, postsPath)
+          } else {
+            return renderMenuItem(menuItem, wordPressUrl, postsPath)
+          }
+        })}
+      </ul>
     )
   } else {
     return null

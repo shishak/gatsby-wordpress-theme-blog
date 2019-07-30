@@ -6,8 +6,9 @@ import Author from "./Author"
 
 const PostEntryInfo = ({ post }) => {
   return (
-    <div className="entry-info">
-      Posted on <Date post={post} /> by <Author post={post} />
+    <div className="entry-info" sx={{ fontSize: 0 }}>
+      <span sx={{ color: "muted" }}>Posted on:</span> <Date post={post} /> by{" "}
+      <Author post={post} />
     </div>
   )
 }

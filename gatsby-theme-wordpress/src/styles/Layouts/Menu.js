@@ -2,6 +2,9 @@ import styled from "@emotion/styled"
 import { above, below } from "../utilities"
 
 export const Menu = styled.nav`
+  ${below.m`
+display: none;
+`}
   a {
     text-decoration: none;
   }

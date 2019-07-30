@@ -6,7 +6,7 @@ import Layout from "../../components/Layout"
 import SEO from "../../components/Seo"
 
 const SinglePost = ({ data }) => {
-  const { title, excerpt, tags, categories } = data.wpgraphql.post
+  const { title, excerpt } = data.wpgraphql.post
 
   return (
     <Layout>

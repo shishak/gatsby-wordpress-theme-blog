@@ -8,6 +8,7 @@ import PostEntryContent from "./PostEntryContent"
 import PostEntryMeta from "./PostEntryMeta"
 import PostEntryInfo from "./PostEntryInfo"
 import { Article } from "../styles/elements"
+import { Button } from "../styles/elements"
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (
@@ -28,7 +29,11 @@ const PostEntry = ({ post, location, postsPrefix }) => {
         <div className="entry-footer">
           <PostEntryMeta post={post} />
           {location !== "single" && (
-            <Link to={`${postsPrefix}/${post.uri}`}>Read More</Link>
+            <Button primary className="read-more">
+              <Link sx={{ color: "#fff" }} to={`${postsPrefix}/${post.uri}`}>
+                Read More
+              </Link>
+            </Button>
           )}
         </div>
       </div>

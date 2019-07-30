@@ -37,13 +37,13 @@ module.exports = options => {
         },
       },
       {
-        resolve: `gatsby-plugin-web-font-loader`,
+        resolve: `gatsby-plugin-google-fonts`,
         options: {
-          google: {
-            families: ["Raleway", "Oswald", "Inconsolata"],
-          },
+          fonts: [`Inconsolata\:400, 700`, `Oswald\:200,300,400,500,600,700`],
+          display: "swap",
         },
       },
+
       `gatsby-plugin-react-helmet`,
     ],
   }

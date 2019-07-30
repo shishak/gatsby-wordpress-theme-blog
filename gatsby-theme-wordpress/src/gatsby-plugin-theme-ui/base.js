@@ -16,29 +16,23 @@ export const Layout = {
 
   h1: {
     color: "text",
-    fontSize: 5,
     lineHeight: "heading",
     fontFamily: "heading",
   },
   h2: {
     ...heading,
-    fontSize: 4,
   },
 
   h3: {
     ...heading,
-    fontSize: 3,
   },
   h4: {
     ...heading,
-    fontSize: 2,
   },
   h5: {
     ...heading,
-    fontSize: 1,
   },
   h6: {
-    fontSize: 0,
     color: "muted",
   },
 }

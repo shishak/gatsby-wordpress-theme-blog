@@ -2,8 +2,8 @@ import { css } from "@emotion/core"
 
 const size = {
   s: 400,
-  m: 960,
-  l: 1140,
+  m: 800,
+  l: 1200,
 }
 
 export const above = Object.keys(size).reduce((acc, label) => {
