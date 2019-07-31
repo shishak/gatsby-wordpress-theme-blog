@@ -14,7 +14,7 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-theme-wordpress`,
+      resolve: `@alexadark/gatsby-theme-wordpress-blog`,
       options: {
         wordPressUrl: config.wordPressUrl,
         postsPrefix: `posts`,
