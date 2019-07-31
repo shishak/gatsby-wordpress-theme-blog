@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import React from "react"
+
 import { graphql } from "gatsby"
-import { Flex, Box } from "theme-ui"
+import { Flex } from "theme-ui"
 import PostEntry from "../../components/PostEntry"
 import Layout from "../../components/Layout"
 import SEO from "../../components/Seo"
@@ -15,7 +15,17 @@ const User = ({ data, pageContext }) => {
     <Layout>
       <SEO title={name} description={`Posts from ${name}`} />
       <Flex sx={{ flexWrap: "wrap", justifyContent: "center", mb: 2 }}>
-        <img sx={{ width: "50px", height: "50px", borderRadius:"100%", mt:2, mr: 2 }} src={avatar.url} alt="" />
+        <img
+          sx={{
+            width: "50px",
+            height: "50px",
+            borderRadius: "100%",
+            mt: 2,
+            mr: 2,
+          }}
+          src={avatar.url}
+          alt={`avatar for ${name}`}
+        />
 
         <h1 sx={{ textTransform: "uppercase" }}>{name}</h1>
       </Flex>

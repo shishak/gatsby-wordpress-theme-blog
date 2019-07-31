@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { above, below, BoxShadow } from "../utilities"
+import { BoxShadow } from "../utilities"
 
 export const Button = styled.button`
   cursor: pointer;

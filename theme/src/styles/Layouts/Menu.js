@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { above, below } from "../utilities"
+import { below } from "../utilities"
 
 export const Menu = styled.nav`
   ${below.m`

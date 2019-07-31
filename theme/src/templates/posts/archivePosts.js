@@ -1,12 +1,11 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from "theme-ui"
-import React from "react"
+import { jsx } from "theme-ui"
+
 import Layout from "../../components/Layout"
 import { graphql } from "gatsby"
 import PostEntry from "../../components/PostEntry"
 import Pagination from "../../components/Pagination"
 import SEO from "../../components/Seo"
-import { PostsContainer } from "../../styles/Layouts"
 
 const Blog = ({ data, pageContext }) => {
   const posts = data.wpgraphql.posts.nodes

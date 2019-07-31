@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { above, below } from "../utilities"
+import { above } from "../utilities"
 
 export const SiteTitle = styled.h1`
   letter-spacing: 3px;
