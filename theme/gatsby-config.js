@@ -9,17 +9,17 @@ module.exports = options => {
 
   return {
     siteMetadata: {
-      title: `Blog Title Placeholder`,
-      author: `Name Placeholder`,
-      description: `Description placeholder`,
+      title: `Gatsby theme WordPress Source Demo`,
+      author: `@alexadark`,
+      description: `Demo of a WordPress source theme for GatsbyJS. Uses WPGraphQL (GraphQL for WordPress).`,
       social: [
         {
           name: `twitter`,
-          url: `https://twitter.com/gatsbyjs`,
+          url: `https://twitter.com/alexadark`,
         },
         {
           name: `github`,
-          url: `https://github.com/gatsbyjs`,
+          url: `https://github.com/alexadark`,
         },
       ],
     },

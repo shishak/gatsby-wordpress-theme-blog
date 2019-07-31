@@ -1,6 +1,7 @@
 {
   "name": "@alexadark/gatsby-theme-wordpress-blog",
-  "author": "Alexandra Spalato",
+  "description": "WordPress source theme for Gastby using WPGraphQL",
+  "author": "Alexandra Spalato <alexaspalato@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/alexadark/gatsby-theme-jam"
@@ -39,6 +40,8 @@
   "keywords": [
     "gatsby",
     "gatsby-theme",
-    "gatsby-plugin"
+    "gatsby-plugin",
+    "wordpress",
+    "wpgraphql"
   ]
 }

@@ -1,58 +1,75 @@
-# Gatsby Theme Jam Submission Example
+# Gatsby Theme WordPress Starter
 
-This repo is an example and potential starting point for theme creators.
+This is a gatsby theme using WordPress as source and allowing to build a standard blog.
+See the [live demo](https://gatsby-theme-wordpress-blog.netlify.com/)
 
-It includes:
-- a bare-bones theme (located in `theme/`) that includes basic setup
-- a demo site (located in `demo/`) that installs the theme
-- a Yarn workspaces configuration so the theme and demo can be worked on simultaneously
+## Dependencies
 
-## How to use this repo
+-This theme uses GraphQL API to source WordPress content. Therefore the source WordPress site must use the [WPGraphQL](https://www.wpgraphql.com/) plugin.
 
-**NOTE:** Make sure to replace `USERNAME` with your GitHub username and `THEMENAME` with your theme name.
+- Twenty nineteen themes needs to be activated in order to have the right meny location
+- You can use this plugins to directly new posts from WordPress https://fr.wordpress.org/plugins/webhook-netlify-deploy/
 
-1.  Fork this repo.
+## Installation
 
-2.  Rename the forked repo `gatsby-theme-THEMENAME`. (Make sure to replace `THEMENAME` with your chosen name.)
+To use this theme in your Gatsby sites, follow these instructions:
 
-3.  Get the theme set up locally.
+1.  Install the theme
+
     ```sh
-    # clone the repo
-    git clone git@github.com:USERNAME/gatsby-theme-THEMENAME.git
-
-    # move into the directory
-    cd gatsby-theme-THEMENAME
-
-    # install dependencies
-    yarn
+    npm install --save @alexadark/gatsby-theme-wordpress-blog
     ```
 
-4.  Update `theme/package.json` with your info.
-    ```diff
-      {
-    +   "name": "gatsby-theme-THEMENAME",
-    +   "author": "Your Name <name@example.com>",
-        "repository": {
-          "type": "git",
-    +     "url": "https://github.com/USERNAME/gatsby-theme-THEMENAME.git"
-        },
-    ```
+    or
 
-5.  Start the demo site.
     ```sh
-    yarn workspace demo develop
+    yarn add @alexadark/gatsby-theme-wordpress-blog
     ```
 
-    The demo will start at http://localhost:8000
+2.  Add the theme to your `gatsby-config.js`:
 
-    **NOTE:** If you’re new to Yarn workspaces, check out [this post](https://www.gatsbyjs.org/blog/2019-05-22-setting-up-yarn-workspaces-for-theme-development/) for details.
+    ```js
+    module.exports = {
+      plugins: [
+        {
+      resolve: `@alexadark/gatsby-theme-wordpress-blog`,
+      options: {
+        wordPressUrl: `http://alexandraspalato.com/webstantly/`,
+        postsPrefix: `posts`,
+        postsPath: ``,
+        paginationPrefix: `blog`,
+        postsPerPage: 8,
+      },
+      ]
+    }
+    ```
 
-6.  Start editing the theme! The demo site is configured to use the local theme, so any changes you make to the local `theme` directory will be reflected on the demo site for easy local development.
+3.  Start your site
+    ```sh
+    gatsby develop
+    ```
 
-7.  Follow the [submission checklist](./theme/README.md#submission-checklist) to make sure your theme qualifies to win!
+## Options
 
-8.  [Submit your theme](https://themejam.gatsbyjs.org/submit) to win!
+`wordPressUrl` - source site.
+`postsPath` - the path for your posts, let it empty if you want them as home page
+in your WordPress installation if you want the blog as home page, then make sure to not have any page with slug 'home'.
+if you want the blog to another page, then create a custom link in your menu, with the postsPath as url (example : /blog), and make sure to not have any page with slug = postsPath
+create a page with slug: 'home' in this case
 
-## More information
+`paginationPrefix` - the prefix of the pages
 
-For contest rules and more information, see [the Theme Jam website](https://themejam.gatsbyjs.org).
+`postsPrefix`
+
+`postsPrePage`
+
+##Features
+
+- 2 levels menu
+- pagination on posts page
+- categories, tags and users
+- Works with twenty nineteen theme to have the right menu location
+
+## How to contribute
+
+This is a WIP and any contribution, feedback and PRs are very welcome. Issues is a preferred way of submitting feedback, but you can also email to [alexaspalato@gmail.com](mailto:alexaspalato@gmail.com).
