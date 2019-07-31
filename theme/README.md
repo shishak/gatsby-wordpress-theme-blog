@@ -63,7 +63,7 @@ create a page with slug: 'home' in this case
 
 `postsPrePage`
 
-##Features
+## Features
 
 - 2 levels menu
 - pagination on posts page
