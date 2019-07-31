@@ -48,7 +48,7 @@ const Header = () => {
         closeFunc={() => setIsOpen(false)}
       >
         <MobileMenu>
-          <Menu wordPressUrl={url} />
+          <Menu wordPressUrl={url} aria-label="main" />
         </MobileMenu>
       </SlidingPanel>
     </StyledHeader>

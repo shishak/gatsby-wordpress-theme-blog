@@ -29,7 +29,11 @@ const PostEntry = ({ post, location, postsPrefix }) => {
           <PostEntryMeta post={post} />
           {location !== "single" && (
             <Button primary className="read-more">
-              <Link sx={{ color: "#fff" }} to={`${postsPrefix}/${post.uri}`}>
+              <Link
+                sx={{ color: "#fff" }}
+                to={`${postsPrefix}/${post.uri}`}
+                aria-label="Read More from this post"
+              >
                 Read More
               </Link>
             </Button>

@@ -7,7 +7,9 @@ const WithLink = ({ post, location, children, postsPrefix }) =>
   location === "single" ? (
     children
   ) : (
-    <Link to={`/${postsPrefix}/${post.uri}`}>{children}</Link>
+    <Link to={`/${postsPrefix}/${post.uri}`} aria-label="View the entire post">
+      {children}
+    </Link>
   )
 
 const PostEntryMedia = ({ post, location, postsPrefix }) => {

@@ -8,14 +8,18 @@ const Categories = ({ post }) => {
   return (
     <div>
       {categories.length > 0 && (
-        <span sx={{ color: "muted" }}>
+        <span sx={{ color: "primary" }}>
           {categories.length > 1 ? "Categories: " : "Category: "}
         </span>
       )}
       {categories.map(cat => (
-        <Button small sx={{ mr: "15px", mb: "15px", fontSize: "14px", py: 0 }}>
+        <Button
+          small
+          secondary
+          sx={{ mr: "15px", mb: "15px", fontSize: "14px", py: 0 }}
+        >
           <Link
-            sx={{ color: "#888" }}
+            sx={{ color: "#fff" }}
             to={`/category/${cat.slug}`}
             key={cat.id}
           >
