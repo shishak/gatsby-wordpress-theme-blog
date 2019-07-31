@@ -18,9 +18,9 @@ module.exports = {
       options: {
         wordPressUrl: config.wordPressUrl,
         postsPrefix: `posts`,
-        postsPath: `blog`,
-        paginationPrefix: ``,
-        postsPerPage: 5,
+        postsPath: ``,
+        paginationPrefix: `blog`,
+        postsPerPage: 8,
       },
     },
   ],
