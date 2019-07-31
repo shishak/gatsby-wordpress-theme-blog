@@ -5,7 +5,9 @@ const Author = ({ post }) => {
   const { name, slug } = post.author
   return (
     <>
-      <Link to={`/author/${slug}`}>{name}</Link>
+      <Link aria-label={`visit ${name} page`} to={`/author/${slug}`}>
+        {name}
+      </Link>
     </>
   )
 }

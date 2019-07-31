@@ -22,6 +22,7 @@ const Categories = ({ post }) => {
             sx={{ color: "#fff" }}
             to={`/category/${cat.slug}`}
             key={cat.id}
+            aria-label={`visit category ${cat.name} page`}
           >
             {cat.name}
           </Link>

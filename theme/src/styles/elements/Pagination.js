@@ -13,6 +13,10 @@ export const Pagination = styled.div`
 `
 
 export const PageNumbers = styled.div`
+  ul {
+    display: flex;
+    justify-content: center;
+  }
   a {
     padding: 5px 10px;
     background: #f5f5f5;

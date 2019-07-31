@@ -18,7 +18,12 @@ const Tags = ({ post }) => {
           secondary
           sx={{ mr: "15px", mb: "15px", fontSize: "14px", py: 0 }}
         >
-          <Link sx={{ color: "#fff" }} to={`/tag/${tag.slug}`} key={tag.id}>
+          <Link
+            aria-label={`visit tag ${tag.name} page`}
+            sx={{ color: "#fff" }}
+            to={`/tag/${tag.slug}`}
+            key={tag.id}
+          >
             {tag.name}
           </Link>
         </Button>

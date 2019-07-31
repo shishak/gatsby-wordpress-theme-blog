@@ -38,18 +38,24 @@ const Pagination = ({
         </PrevNextLinks>
       )}
       <PageNumbers>
-        {Array.from({ length: allPosts.length / itemsPerPage }, (_, i) => (
-          <Link
-            key={`pagination-number${i + 1}`}
-            to={
-              i === 0
-                ? `${postsPath}/`
-                : `${postsPath}/${paginationPrefix}/${i + 1}`
-            }
-          >
-            {i + 1}
-          </Link>
-        ))}
+        <nav role="navigation" aria-label="Pagination Navigation">
+          <ul>
+            {Array.from({ length: allPosts.length / itemsPerPage }, (_, i) => (
+              <li>
+                <Link
+                  key={`pagination-number${i + 1}`}
+                  to={
+                    i === 0
+                      ? `${postsPath}/`
+                      : `${postsPath}/${paginationPrefix}/${i + 1}`
+                  }
+                >
+                  {i + 1}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </PageNumbers>
       {hasNextPage && (
         <PrevNextLinks>
