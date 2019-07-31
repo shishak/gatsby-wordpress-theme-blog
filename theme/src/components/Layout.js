@@ -4,7 +4,7 @@ import theme from "gatsby-plugin-theme-ui"
 import Header from "./Header.js"
 import Footer from "./Footer.js"
 
-import { GlobalStyles } from "../styles"
+// import { GlobalStyles } from "../styles"
 import { Layout as StyledLayout, Container } from "theme-ui"
 // import { Container } from "../styles/Layouts"
 
