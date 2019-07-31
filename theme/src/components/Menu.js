@@ -89,15 +89,17 @@ const Menu = ({ wordPressUrl }) => {
 
   if (data.wpgraphql.menuItems) {
     return (
-      <ul role="menu">
-        {data.wpgraphql.menuItems.nodes.map(menuItem => {
-          if (menuItem.childItems.nodes.length) {
-            return renderSubMenu(menuItem, wordPressUrl, postsPath)
-          } else {
-            return renderMenuItem(menuItem, wordPressUrl, postsPath)
-          }
-        })}
-      </ul>
+      <nav aria-label="main">
+        <ul role="menu">
+          {data.wpgraphql.menuItems.nodes.map(menuItem => {
+            if (menuItem.childItems.nodes.length) {
+              return renderSubMenu(menuItem, wordPressUrl, postsPath)
+            } else {
+              return renderMenuItem(menuItem, wordPressUrl, postsPath)
+            }
+          })}
+        </ul>
+      </nav>
     )
   } else {
     return null
