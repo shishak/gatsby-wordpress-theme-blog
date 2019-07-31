@@ -25,6 +25,9 @@ const theme = {
   styles: {
     Layout,
     Main,
+    Container: {
+      px: 2,
+    },
   },
 }
 

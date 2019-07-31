@@ -8,6 +8,10 @@ export const Card = styled.div`
   margin-bottom: 50px;
   .entry-title {
     text-transform: uppercase;
+    ${below.s`
+      font-size: 2.8rem;
+      line-height: 1.6;
+    `}
 
     a {
       position: relative;
@@ -59,6 +63,9 @@ export const Card = styled.div`
   }
   .entry-media {
     width: 100%;
+    ${below.s`
+     height: 200px;
+    `}
   }
   .read-more {
     margin-top: 20px;

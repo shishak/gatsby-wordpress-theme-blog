@@ -596,6 +596,10 @@ const Layout = ({ children }) => (
           display: inherit;
           position: absolute;
         }
+
+        .cloud-sliding-panel-container {
+          padding: 0 !important;
+        }
       `}
     />
     <StyledLayout>
