@@ -1,22 +1,21 @@
 /** @jsx jsx */
-import { jsx, ThemeProvider } from "theme-ui"
-import { Global, css } from "@emotion/core"
-import theme from "gatsby-plugin-theme-ui"
-import Header from "./Header.js"
-import Footer from "./Footer.js"
+import { jsx, ThemeProvider } from 'theme-ui'
+import { Global, css } from '@emotion/core'
+import theme from 'gatsby-plugin-theme-ui'
+import Header from './Header.js'
+import Footer from './Footer.js'
 
-import { Layout as StyledLayout, Container } from "theme-ui"
-// import { Container } from "../styles/Layouts"
+import { Layout as StyledLayout, Container } from 'theme-ui'
 
 const Layout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <Global
       styles={css({
-        "*": {
+        '*': {
           boxSizing: `inherit`,
         },
         html: {
-          fontSize: "62.5%",
+          fontSize: '62.5%',
         },
         body: {
           margin: 0,
@@ -32,11 +31,11 @@ const Layout = ({ children }) => (
           lineHeight: `body`,
           fontWeight: `body`,
         },
-        "::selection": {
+        '::selection': {
           backgroundColor: `primary`,
           color: `background`,
         },
-        "#___gatsby": {
+        '#___gatsby': {
           position: `relative`,
           overflowX: `hidden`,
         },
@@ -44,18 +43,18 @@ const Layout = ({ children }) => (
           transition: `all 0.3s ease-in-out`,
           textDecoration: `none`,
           outline: `none`,
-          "&:focus": {
+          '&:focus': {
             boxShadow: `outline`,
           },
         },
         nav: {
           li: {
-            listStyleType: "none",
+            listStyleType: 'none',
           },
         },
         button: {
           transition: `all 0.3s ease-in-out`,
-          "&:hover, &:focus": {
+          '&:hover, &:focus': {
             transform: `translateY(-1px)`,
           },
         },
@@ -63,7 +62,7 @@ const Layout = ({ children }) => (
     />
     <StyledLayout sx={{ bg: `background` }}>
       <Header />
-      <Container>{children}</Container>
+      <Container sx={{ maxWidth: `1000px` }}>{children}</Container>
       <Footer />
     </StyledLayout>
   </ThemeProvider>

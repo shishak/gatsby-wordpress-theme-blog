@@ -1,6 +1,6 @@
-import { tailwind } from "@theme-ui/presets"
+import { tailwind } from '@theme-ui/presets'
 
-import colors from "./colors"
+import colors from './colors'
 import {
   fonts,
   fontSizes,
@@ -14,10 +14,10 @@ import {
   h5,
   h6,
   p,
-} from "./typo"
-import { space } from "./space"
-import { sizes } from "./sizes"
-import { buttons, links, menus } from "./components"
+} from './typo'
+import { space } from './space'
+import { sizes } from './sizes'
+import { buttons, links, menus, cards } from './components'
 
 export default {
   ...tailwind,
@@ -29,7 +29,7 @@ export default {
   space,
   sizes,
 
-  breakpoints: [`400px`, `800px`, `1200px`, `1400px`],
+  breakpoints: ['576px', '768px', '992px', '1200px'],
   radii: {
     ...tailwind.radii,
     xl: `1.6rem`,
@@ -71,6 +71,7 @@ export default {
   links,
   buttons,
   menus,
+  cards,
   inputs: {
     primary: {
       px: 3,
@@ -80,7 +81,7 @@ export default {
       boxShadow: `default`,
       border: `none`,
       outline: `none`,
-      "&:focus": {
+      '&:focus': {
         boxShadow: `outline`,
       },
     },

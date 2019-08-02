@@ -1,15 +1,15 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link } from "gatsby"
-import PostEntryTitle from "./PostEntryTitle"
-import PostEntryMedia from "./PostEntryMedia"
-import PostEntryContent from "./PostEntryContent"
-import PostEntryMeta from "./PostEntryMeta"
-import PostEntryInfo from "./PostEntryInfo"
+import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
+import PostEntryTitle from './PostEntryTitle'
+import PostEntryMedia from './PostEntryMedia'
+import PostEntryContent from './PostEntryContent'
+import PostEntryMeta from './PostEntryMeta'
+import PostEntryInfo from './PostEntryInfo'
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (
-    <article>
+    <article sx={{ variant: `cards.white`, mb: 5 }}>
       <PostEntryMedia
         location={location}
         post={post}
@@ -25,12 +25,12 @@ const PostEntry = ({ post, location, postsPrefix }) => {
         <PostEntryContent location={location} post={post} />
         <div className="entry-footer">
           <PostEntryMeta post={post} />
-          {location !== "single" && (
+          {location !== 'single' && (
             <Link
               sx={{
                 variant: `buttons.secondary`,
                 mt: 2,
-                py: 3,
+                py: 2,
                 float: [`none`, `none`, `right`],
                 mt: [0, 0, `-50px`],
               }}
