@@ -1,14 +1,14 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 
 const SiteBranding = ({ title }) => {
   return (
-    <h1>
-      <Link to="/" rel="home">
+    <Styled.h1>
+      <Styled.a as={Link} to="/" rel="home">
         {title}
-      </Link>
-    </h1>
+      </Styled.a>
+    </Styled.h1>
   )
 }
 

@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Container } from "theme-ui"
+import { jsx, Container, Flex, Box, Header as StyledHeader } from "theme-ui"
 import { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -27,18 +27,20 @@ const Header = () => {
   const { title, url } = data.wpgraphql.generalSettings
 
   return (
-    <header>
-      <Container sx={{ maxWidth: "large" }}>
-        <SiteBranding title={title} />
+    <StyledHeader sx={{ bg: `white`, borderBottom: `1px solid #ddd` }}>
+      <Container sx={{ py: [3, 2, 0] }}>
+        <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
+          <SiteBranding title={title} />
 
-        <Menu wordPressUrl={url} />
+          <Menu wordPressUrl={url} />
 
-        <Hamburger
-          onClick={() => {
-            setType("side")
-            setIsOpen(true)
-          }}
-        />
+          <Hamburger
+            onClick={() => {
+              setType("side")
+              setIsOpen(true)
+            }}
+          />
+        </Flex>
       </Container>
 
       <SlidingPanel
@@ -48,7 +50,7 @@ const Header = () => {
       >
         <Menu wordPressUrl={url} />
       </SlidingPanel>
-    </header>
+    </StyledHeader>
   )
 }
 

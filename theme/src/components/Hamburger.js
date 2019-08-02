@@ -14,6 +14,7 @@ const Hamburger = ({ onClick }) => {
         "&:hover": {
           color: "primary",
         },
+        display: ["block", "block", "none"],
       }}
     />
   )

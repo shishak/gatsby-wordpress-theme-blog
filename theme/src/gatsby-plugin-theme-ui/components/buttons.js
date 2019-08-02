@@ -18,7 +18,7 @@ export const buttons = {
     py: `0.6rem`,
     boxShadow: t => `0px 10px 15px ${t.colors.indigo[2]}`,
     "&:hover": {
-      transform: `translateY(-1px)`,
+      transform: `translateY(-10px)`,
     },
   },
   secondary: {
