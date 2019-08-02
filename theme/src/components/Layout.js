@@ -48,6 +48,11 @@ const Layout = ({ children }) => (
             boxShadow: `outline`,
           },
         },
+        nav: {
+          li: {
+            listStyleType: "none",
+          },
+        },
         button: {
           transition: `all 0.3s ease-in-out`,
           "&:hover, &:focus": {

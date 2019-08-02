@@ -26,15 +26,19 @@ const PostEntry = ({ post, location, postsPrefix }) => {
         <div className="entry-footer">
           <PostEntryMeta post={post} />
           {location !== "single" && (
-            <button>
-              <Link
-                sx={{ color: "#fff" }}
-                to={`${postsPrefix}/${post.uri}`}
-                aria-label="Read More from this post"
-              >
-                Read More
-              </Link>
-            </button>
+            <Link
+              sx={{
+                variant: `buttons.secondary`,
+                mt: 2,
+                py: 3,
+                float: [`none`, `none`, `right`],
+                mt: [0, 0, `-50px`],
+              }}
+              to={`${postsPrefix}/${post.uri}`}
+              aria-label="Read More from this post"
+            >
+              Read More
+            </Link>
           )}
         </div>
       </div>

@@ -17,7 +17,7 @@ import {
 } from "./typo"
 import { space } from "./space"
 import { sizes } from "./sizes"
-import { buttons, links } from "./components"
+import { buttons, links, menus } from "./components"
 
 export default {
   ...tailwind,
@@ -29,7 +29,7 @@ export default {
   space,
   sizes,
 
-  breakpoints: [`600px`, `900px`, `1200px`, `1800px`],
+  breakpoints: [`400px`, `800px`, `1200px`, `1400px`],
   radii: {
     ...tailwind.radii,
     xl: `1.6rem`,
@@ -69,8 +69,8 @@ export default {
   },
 
   links,
-
   buttons,
+  menus,
   inputs: {
     primary: {
       px: 3,
@@ -85,6 +85,7 @@ export default {
       },
     },
   },
+
   gradients: {
     blue: {
       backgroundImage: t =>

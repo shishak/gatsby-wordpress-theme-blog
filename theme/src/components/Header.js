@@ -28,11 +28,12 @@ const Header = () => {
 
   return (
     <StyledHeader sx={{ bg: `white`, borderBottom: `1px solid #ddd` }}>
-      <Container sx={{ py: [3, 2, 0] }}>
+      <Container sx={{ py: [3, 1] }}>
         <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
           <SiteBranding title={title} />
-
-          <Menu wordPressUrl={url} />
+          <div sx={{ display: ["none", "none", "block"] }}>
+            <Menu wordPressUrl={url} />
+          </div>
 
           <Hamburger
             onClick={() => {

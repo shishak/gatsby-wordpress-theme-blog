@@ -1,6 +1,8 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import { createLocalLink } from "../utils"
+import { Flex } from "theme-ui"
 
 const MENU_QUERY = graphql`
   fragment MenuFields on WPGraphQL_MenuItem {
@@ -89,7 +91,7 @@ const Menu = ({ wordPressUrl }) => {
 
   if (data.wpgraphql.menuItems) {
     return (
-      <nav aria-label="main">
+      <nav aria-label="main" sx={{ variant: `menus.main` }}>
         <ul role="menu">
           {data.wpgraphql.menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {
