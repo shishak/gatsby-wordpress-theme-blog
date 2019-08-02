@@ -79,16 +79,6 @@ const Layout = ({ children }) => (
           -webkit-overflow-scrolling: touch;
         }
 
-        /**
-  * Correct the font size and margin on h1 elements within section and
-  * article contexts in Chrome, Firefox, and Safari.
-  */
-
-        h1 {
-          font-size: 2em;
-          margin: 0.67em 0;
-        }
-
         /* Grouping content
   * ========================================================================== */
 
@@ -140,20 +130,6 @@ const Layout = ({ children }) => (
   * ========================================================================== */
 
         /**
-  * Remove the gray background on active links in IE 10.
-  */
-
-        a {
-          background-color: transparent;
-          transition: all 0.4s ease-in-out;
-          color: #111;
-          text-decoration: none;
-          &:hover {
-            border-color: #111;
-          }
-        }
-
-        /**
   * Add the correct text decoration in Edge, IE, Opera, and Safari.
   */
 
@@ -161,16 +137,6 @@ const Layout = ({ children }) => (
           text-decoration: underline;
           text-decoration: underline dotted;
         }
-
-        /**
-  * Add the correct font weight in Chrome, Edge, and Safari.
-  */
-
-        b,
-        strong {
-          font-weight: bolder;
-        }
-
         /**
   * 1. Use the default monospace user interface font
   *    in all browsers (opinionated).

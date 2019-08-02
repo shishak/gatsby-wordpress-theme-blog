@@ -1,8 +1,13 @@
+import { tailwind } from "@theme-ui/presets"
 export default {
-  text: "#444",
-  background: "#f5f5f5",
-  primary: "#E61B58",
-  secondary: "#282A3E",
-  muted: "#bbb ",
-  border: "#ddd",
+  ...tailwind.colors,
+  primary: tailwind.colors.purple[6],
+  secondary: tailwind.colors.teal[5],
+  background: tailwind.colors.gray[1],
+  textMuted: `#667488`,
+  text: tailwind.colors.gray[8],
+  grayDark: tailwind.colors.gray[9],
+  dark: tailwind.colors.gray[7],
+  muted: tailwind.colors.gray[5],
+  light: tailwind.colors.gray[3],
 }

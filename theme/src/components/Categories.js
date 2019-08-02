@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
-import { Button } from "../styles/elements/Buttons"
 
 const Categories = ({ post }) => {
   const categories = post.categories.nodes
@@ -13,11 +12,7 @@ const Categories = ({ post }) => {
         </span>
       )}
       {categories.map(cat => (
-        <Button
-          small
-          secondary
-          sx={{ mr: "15px", mb: "15px", fontSize: "14px", py: 0 }}
-        >
+        <button sx={{ variant: `buttons.primary`, mr: 3, py: 3 }}>
           <Link
             sx={{ color: "#fff" }}
             to={`/category/${cat.slug}`}
@@ -26,7 +21,7 @@ const Categories = ({ post }) => {
           >
             {cat.name}
           </Link>
-        </Button>
+        </button>
       ))}
     </div>
   )

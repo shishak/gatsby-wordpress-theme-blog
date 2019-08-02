@@ -2,7 +2,7 @@
 import { Container, Footer as StyledFooter, jsx } from "theme-ui"
 
 const Footer = () => (
-  <StyledFooter sx={{ bg: "secondary", color: "white" }}>
+  <StyledFooter sx={{ bg: ["secondary", "primary"], color: "white" }}>
     <Container
       sx={{
         maxWidth: "large",

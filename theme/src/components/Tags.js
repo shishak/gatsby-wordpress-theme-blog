@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
-import { Button } from "../styles/elements"
 
 const Tags = ({ post }) => {
   const tags = post.tags.nodes
@@ -13,7 +12,7 @@ const Tags = ({ post }) => {
         </span>
       )}
       {tags.map(tag => (
-        <Button
+        <button
           small
           secondary
           sx={{ mr: "15px", mb: "15px", fontSize: "14px", py: 0 }}
@@ -26,7 +25,7 @@ const Tags = ({ post }) => {
           >
             {tag.name}
           </Link>
-        </Button>
+        </button>
       ))}
     </div>
   )

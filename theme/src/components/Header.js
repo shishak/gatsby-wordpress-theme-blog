@@ -3,10 +3,9 @@ import { jsx, Container } from "theme-ui"
 import { useState } from "react"
 import { useStaticQuery, graphql } from "gatsby"
 
-import { Header as StyledHeader } from "../styles/Layouts"
 import Menu from "./Menu"
 import SiteBranding from "./SiteBranding"
-import { Menu as StyledMenu, MobileMenu } from "../styles/Layouts"
+
 import Hamburger from "./Hamburger"
 import SlidingPanel from "react-sliding-panel"
 
@@ -28,12 +27,12 @@ const Header = () => {
   const { title, url } = data.wpgraphql.generalSettings
 
   return (
-    <StyledHeader>
+    <header>
       <Container sx={{ maxWidth: "large" }}>
         <SiteBranding title={title} />
-        <StyledMenu>
-          <Menu wordPressUrl={url} />
-        </StyledMenu>
+
+        <Menu wordPressUrl={url} />
+
         <Hamburger
           onClick={() => {
             setType("side")
@@ -47,11 +46,9 @@ const Header = () => {
         isOpen={isOpen}
         closeFunc={() => setIsOpen(false)}
       >
-        <MobileMenu>
-          <Menu wordPressUrl={url} />
-        </MobileMenu>
+        <Menu wordPressUrl={url} />
       </SlidingPanel>
-    </StyledHeader>
+    </header>
   )
 }
 

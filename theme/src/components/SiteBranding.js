@@ -1,15 +1,14 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
-import { SiteTitle } from "../styles/elements"
 
 const SiteBranding = ({ title }) => {
   return (
-    <SiteTitle>
+    <h1>
       <Link to="/" rel="home">
         {title}
       </Link>
-    </SiteTitle>
+    </h1>
   )
 }
 

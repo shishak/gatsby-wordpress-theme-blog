@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import React from "react"
 import { Link } from "gatsby"
 
@@ -9,20 +9,18 @@ const PostEntryTitle = ({ post, location, postsPrefix }) => {
   return (
     <>
       {location === "single" ? (
-        <h1
+        <Styled.h1
           className="entry-title"
           dangerouslySetInnerHTML={{ __html: title }}
         />
       ) : (
-        <h2
-          sx={{ fontSize: 5, "a:hover": { color: "primary" } }}
-          className="entry-title"
-        >
-          <Link
+        <Styled.h1 as="h2" className="entry-title">
+          <Styled.a
+            as={Link}
             to={`${postsPrefix}/${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}
           />
-        </h2>
+        </Styled.h1>
       )}
     </>
   )

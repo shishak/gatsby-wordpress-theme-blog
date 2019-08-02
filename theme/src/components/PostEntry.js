@@ -6,12 +6,10 @@ import PostEntryMedia from "./PostEntryMedia"
 import PostEntryContent from "./PostEntryContent"
 import PostEntryMeta from "./PostEntryMeta"
 import PostEntryInfo from "./PostEntryInfo"
-import { Article } from "../styles/elements"
-import { Button } from "../styles/elements"
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (
-    <Article>
+    <article>
       <PostEntryMedia
         location={location}
         post={post}
@@ -28,7 +26,7 @@ const PostEntry = ({ post, location, postsPrefix }) => {
         <div className="entry-footer">
           <PostEntryMeta post={post} />
           {location !== "single" && (
-            <Button primary className="read-more">
+            <button>
               <Link
                 sx={{ color: "#fff" }}
                 to={`${postsPrefix}/${post.uri}`}
@@ -36,11 +34,11 @@ const PostEntry = ({ post, location, postsPrefix }) => {
               >
                 Read More
               </Link>
-            </Button>
+            </button>
           )}
         </div>
       </div>
-    </Article>
+    </article>
   )
 }
 

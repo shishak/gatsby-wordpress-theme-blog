@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { graphql } from "gatsby"
 import Layout from "../../components/Layout"
 import SEO from "../../components/Seo"
@@ -12,12 +12,12 @@ const Page = ({ data }) => {
       <SEO title={title} description={excerpt} />
       <Card>
         <div className="content">
-          <h1
+          <Styled.h1
             sx={{ textAlign: "center", textTransform: "uppercase" }}
             className="page-title"
             dangerouslySetInnerHTML={{ __html: title }}
           />
-          <p
+          <Styled.root
             className="content"
             dangerouslySetInnerHTML={{ __html: content }}
           />
