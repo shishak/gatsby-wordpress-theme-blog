@@ -1,8 +1,7 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { graphql, useStaticQuery, Link } from "gatsby"
-import { createLocalLink } from "../utils"
-import { Flex } from "theme-ui"
+import { jsx } from 'theme-ui'
+import { graphql, useStaticQuery, Link } from 'gatsby'
+import { createLocalLink } from '../utils'
 
 const MENU_QUERY = graphql`
   fragment MenuFields on WPGraphQL_MenuItem {
@@ -37,7 +36,7 @@ const MENU_QUERY = graphql`
 `
 
 const renderLink = (menuItem, wordPressUrl, postsPath) =>
-  menuItem.connectedObject.__typename === "WPGraphQL_MenuItem" ? (
+  menuItem.connectedObject.__typename === 'WPGraphQL_MenuItem' ? (
     menuItem.url === `/${postsPath}` ? (
       <Link to={`/${postsPath}`}> {menuItem.label}</Link>
     ) : menuItem.url === `#` ? (
@@ -91,7 +90,7 @@ const Menu = ({ wordPressUrl }) => {
 
   if (data.wpgraphql.menuItems) {
     return (
-      <nav aria-label="main" sx={{ variant: `menus.main` }}>
+      <nav aria-label="main">
         <ul role="menu">
           {data.wpgraphql.menuItems.nodes.map(menuItem => {
             if (menuItem.childItems.nodes.length) {

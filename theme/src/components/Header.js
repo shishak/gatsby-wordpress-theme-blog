@@ -31,7 +31,9 @@ const Header = () => {
       <Container sx={{ py: [3, 1] }}>
         <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <SiteBranding title={title} />
-          <div sx={{ display: ['none', 'none', 'block'] }}>
+          <div
+            sx={{ display: ['none', 'none', 'block'], variant: `menus.main` }}
+          >
             <Menu wordPressUrl={url} />
           </div>
 
