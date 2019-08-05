@@ -1,8 +1,12 @@
-import { BoxShadow } from '../sharedStyles'
 const sharedCardStyles = {
-  boxShadow: BoxShadow[0],
+  boxShadow: `lg`,
+  borderRadius: 10,
+  fontFamily: `body`,
+  '.entry-title': {
+    mt: 0,
+  },
   '.content': {
-    p: [4, 4, 5, 5],
+    p: [2, 5],
   },
 }
 

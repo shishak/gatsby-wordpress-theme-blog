@@ -1,11 +1,11 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx } from 'theme-ui'
 
-import Layout from "../../components/Layout"
-import { graphql } from "gatsby"
-import PostEntry from "../../components/PostEntry"
-import Pagination from "../../components/Pagination"
-import SEO from "../../components/Seo"
+import Layout from '../../components/Layout'
+import { graphql } from 'gatsby'
+import PostEntry from '../../components/PostEntry'
+import Pagination from '../../components/Pagination'
+import SEO from '../../components/Seo'
 
 const Blog = ({ data, pageContext }) => {
   const posts = data.wpgraphql.posts.nodes
@@ -16,6 +16,7 @@ const Blog = ({ data, pageContext }) => {
     allPosts,
     options: { postsPrefix, postsPath, paginationPrefix },
   } = pageContext
+
   return (
     <Layout>
       <SEO title="blog" description="this is the posts page" />

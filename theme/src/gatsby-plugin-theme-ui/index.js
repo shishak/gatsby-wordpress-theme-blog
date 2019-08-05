@@ -29,10 +29,10 @@ export default {
   space,
   sizes,
 
-  breakpoints: ['576px', '768px', '992px', '1200px'],
+  breakpoints: [`600px`, `900px`, `1200px`],
   radii: {
     ...tailwind.radii,
-    xl: `1.6rem`,
+    xl: `1rem`,
   },
   styles: {
     ...tailwind.styles,
@@ -53,7 +53,7 @@ export default {
       display: `block`,
       color: `textMuted`,
       px: [2, 3],
-      py: [4, 5],
+      py: [3, 4],
     },
     Container: {
       maxWidth: `1200px`,

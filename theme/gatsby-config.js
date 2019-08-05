@@ -40,11 +40,13 @@ module.exports = options => {
         resolve: `gatsby-plugin-google-fonts`,
         options: {
           fonts: [`Inconsolata\:400, 700`, `Oswald\:200,300,400,500,600,700`],
-          display: "swap",
+          display: 'swap',
         },
       },
 
       `gatsby-plugin-react-helmet`,
+      `gatsby-transformer-sharp`,
+      `gatsby-plugin-sharp`,
     ],
   }
 }

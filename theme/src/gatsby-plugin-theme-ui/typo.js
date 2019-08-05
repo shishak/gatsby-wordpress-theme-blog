@@ -1,11 +1,11 @@
-import { tailwind } from "@theme-ui/presets"
+import { tailwind } from '@theme-ui/presets'
 
 export const fonts = {
-  body: "Inconsolata, monospace",
-  heading: "Oswald, sans-serif",
+  body: 'Inconsolata, monospace',
+  heading: 'Oswald, sans-serif',
 }
 const transition = {
-  transition: "all .4s ease-in-out",
+  transition: 'all .4s ease-in-out',
 }
 
 export const fontWeights = {
@@ -15,22 +15,22 @@ export const fontWeights = {
 }
 
 export const fontSizes = [
-  "1.4rem",
-  "1.6rem",
-  "2rem",
-  "2.4rem",
-  "3rem",
-  "3.6rem",
-  "4.8rem",
-  "6.4rem",
-  "7.2rem",
+  '1.4rem',
+  '1.6rem',
+  '2rem',
+  '2.4rem',
+  '3rem',
+  '3.6rem',
+  '4.8rem',
+  '6.4rem',
+  '7.2rem',
 ]
 
 export const baseLineHeights = {
-  none: "1",
-  tight: "1.25",
-  relaxed: "1.625",
-  loose: "2",
+  none: '1',
+  tight: '1.25',
+  relaxed: '1.625',
+  loose: '2',
 }
 
 export const lineHeights = {
@@ -40,41 +40,41 @@ export const lineHeights = {
 }
 
 const heading = {
-  fontFamily: "heading",
-  lineHeight: "heading",
-  fontWeight: "heading",
-  color: "text",
+  fontFamily: 'heading',
+  lineHeight: 'heading',
+  fontWeight: 'heading',
+  color: 'text',
   letterSpacing: 1,
   a: {
-    borderBottom: "none",
+    borderBottom: 'none',
   },
 }
 
 export const LinkEffect = {
-  position: "relative",
-  "&:before": {
-    content: "",
-    width: "50%",
-    height: "50px",
-    bg: "primary",
+  position: 'relative',
+  '&:before': {
+    content: '',
+    width: '50%',
+    height: '50px',
+    bg: 'primary',
     opacity: 0.3,
-    position: "absolute",
-    left: "-5px",
+    position: 'absolute',
+    left: '-5px',
     bottom: 0,
   },
-  "&:hover": {
-    "&:before": {
-      width: "110%",
+  '&:hover': {
+    '&:before': {
+      width: '110%',
     },
   },
 }
 
 export const a = {
   ...transition,
-  color: "text",
-  textDecoration: "none",
-  "&:hover": {
-    color: "primary",
+  color: 'text',
+  textDecoration: 'none',
+  '&:hover': {
+    color: 'primary',
   },
 }
 
@@ -111,7 +111,7 @@ export const h5 = {
 }
 export const h6 = {
   ...heading,
-  color: "muted",
+  color: 'muted',
   fontSize: 1,
   mb: 2,
 }

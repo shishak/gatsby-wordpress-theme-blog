@@ -1,17 +1,17 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Box, Header as StyledHeader } from "theme-ui"
-import { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { jsx, Container, Flex, Box, Header as StyledHeader } from 'theme-ui'
+import { useState } from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
-import Menu from "./Menu"
-import SiteBranding from "./SiteBranding"
+import Menu from './Menu'
+import SiteBranding from './SiteBranding'
 
-import Hamburger from "./Hamburger"
-import SlidingPanel from "react-sliding-panel"
+import Hamburger from './Hamburger'
+import SlidingPanel from 'react-sliding-panel'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [type, setType] = useState("side")
+  const [type, setType] = useState('side')
 
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
@@ -29,15 +29,15 @@ const Header = () => {
   return (
     <StyledHeader sx={{ bg: `white`, borderBottom: `1px solid #ddd` }}>
       <Container sx={{ py: [3, 1] }}>
-        <Flex sx={{ justifyContent: "space-between", alignItems: "center" }}>
+        <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <SiteBranding title={title} />
-          <div sx={{ display: ["none", "none", "block"] }}>
+          <div sx={{ display: ['none', 'none', 'block'] }}>
             <Menu wordPressUrl={url} />
           </div>
 
           <Hamburger
             onClick={() => {
-              setType("side")
+              setType('side')
               setIsOpen(true)
             }}
           />

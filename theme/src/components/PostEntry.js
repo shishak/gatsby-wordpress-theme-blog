@@ -6,6 +6,7 @@ import PostEntryMedia from './PostEntryMedia'
 import PostEntryContent from './PostEntryContent'
 import PostEntryMeta from './PostEntryMeta'
 import PostEntryInfo from './PostEntryInfo'
+import { links } from '../gatsby-plugin-theme-ui/components'
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (
@@ -22,17 +23,20 @@ const PostEntry = ({ post, location, postsPrefix }) => {
           postsPrefix={postsPrefix}
         />
         <PostEntryInfo className="entry-info" post={post} />
-        <PostEntryContent location={location} post={post} />
+        <PostEntryContent
+          location={location}
+          post={post}
+          // sx={{ a: { variant: links.decorated } }}
+        />
         <div className="entry-footer">
           <PostEntryMeta post={post} />
           {location !== 'single' && (
             <Link
               sx={{
                 variant: `buttons.secondary`,
-                mt: 2,
-                py: 2,
-                float: [`none`, `none`, `right`],
-                mt: [0, 0, `-50px`],
+                py: `15px`,
+                display: `inline-block`,
+                ml: [0, 0, 5],
               }}
               to={`${postsPrefix}/${post.uri}`}
               aria-label="Read More from this post"

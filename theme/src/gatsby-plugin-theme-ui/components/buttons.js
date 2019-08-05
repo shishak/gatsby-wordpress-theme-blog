@@ -3,36 +3,34 @@ const sharedButtonStyles = {
   color: `white`,
   cursor: `pointer`,
   fontFamily: `body`,
-  fontWeight: `medium`,
-  transition: `all 0.3s ease-in-out`,
+  fontWeight: `bold`,
+  transition: `all 0.4s ease-in-out`,
+  letterSpacing: 1,
+  boxShadow: `md`,
+  '&:hover': {
+    transform: `translateY(-5px)`,
+    boxShadow: `2xl`,
+  },
 }
 
 export const buttons = {
   primary: {
     ...sharedButtonStyles,
-    borderRadius: `full`,
+    borderRadius: 5,
     backgroundImage: t =>
-      `linear-gradient(45deg, ${t.colors.indigo[6]}, ${t.colors.indigo[4]})`,
-    fontSize: [1, 2],
-    px: 4,
-    py: `0.6rem`,
-    boxShadow: t => `0px 10px 15px ${t.colors.indigo[2]}`,
-    "&:hover": {
-      transform: `translateY(-10px)`,
-    },
+      `linear-gradient(45deg, ${t.colors.primary}, ${t.colors.purple[7]})`,
+    fontSize: [0],
+    px: 2,
+    py: 1,
   },
   secondary: {
     ...sharedButtonStyles,
-    borderRadius: `full`,
+    borderRadius: 5,
     backgroundImage: t =>
-      `linear-gradient(45deg, ${t.colors.gray[7]}, ${t.colors.gray[5]})`,
+      `linear-gradient(45deg, ${t.colors.secondary}, ${t.colors.purple[6]})`,
     fontSize: 1,
-    px: 4,
+    px: 2,
     py: 1,
-    boxShadow: `default`,
-    "&:hover": {
-      transform: `translateY(-1px)`,
-    },
   },
 
   newsletter: {
@@ -56,7 +54,7 @@ export const buttons = {
     fontWeight: `semibold`,
     px: 4,
     py: `0.7rem`,
-    "&:hover": {
+    '&:hover': {
       backgroundColor: `white`,
       color: `primary`,
     },
@@ -70,7 +68,7 @@ export const buttons = {
     py: `0.75rem`,
     backgroundColor: `white`,
     color: `primary`,
-    "&:hover": {
+    '&:hover': {
       transform: `translateY(-1px)`,
     },
   },
