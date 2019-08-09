@@ -1,18 +1,14 @@
 /** @jsx jsx */
-import { jsx, Container, Flex, Box, Header as StyledHeader } from 'theme-ui'
-import { useState } from 'react'
+import { jsx, Container, Flex, Header as StyledHeader } from 'theme-ui'
+
 import { useStaticQuery, graphql } from 'gatsby'
 
 import Menu from './Menu'
 import SiteBranding from './SiteBranding'
 
-import Hamburger from './Hamburger'
-import SlidingPanel from 'react-sliding-panel'
+import { slide as SlideMenu } from 'react-burger-menu'
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false)
-  const [type, setType] = useState('side')
-
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       wpgraphql {
@@ -27,7 +23,35 @@ const Header = () => {
   const { title, url } = data.wpgraphql.generalSettings
 
   return (
-    <StyledHeader sx={{ bg: `white`, borderBottom: `1px solid #ddd` }}>
+    <StyledHeader
+      sx={{
+        bg: `white`,
+        borderBottom: `1px solid #ddd`,
+        '.bm-burger-button': {
+          position: 'relative',
+          width: '20px',
+          height: '20px',
+          right: '36px',
+          // top: '20px',
+          display: ['block', 'block', 'none'],
+
+          ':hover': {
+            cursor: `pointer`,
+            '.bm-burger-bars': {
+              background: t => t.colors.primary,
+              opacity: 1,
+            },
+          },
+        },
+        '.bm-burger-bars': {
+          background: `#444`,
+          transition: `all .4s ease-in-out`,
+        },
+        'div:nth-child(3)': {
+          display: [`block`, `block`, `none`],
+        },
+      }}
+    >
       <Container sx={{ py: [3, 1] }}>
         <Flex sx={{ justifyContent: 'space-between', alignItems: 'center' }}>
           <SiteBranding title={title} />
@@ -36,23 +60,37 @@ const Header = () => {
           >
             <Menu wordPressUrl={url} />
           </div>
+          <SlideMenu
+            right
+            width={'300px'}
+            sx={{
+              bg: `secondary`,
+              color: `primary`,
+              top: 0,
 
-          <Hamburger
-            onClick={() => {
-              setType('side')
-              setIsOpen(true)
+              a: {
+                color: `white`,
+              },
+              fontSize: 2,
+              fontFamily: `heading`,
+              '.sub-menu': {
+                pl: 1,
+                '.menu-item': {
+                  fontSize: 1,
+                },
+              },
+              '.bm-cross-button': {
+                cursor: `pointer`,
+              },
+              '.bm-cross': {
+                bg: `white`,
+              },
             }}
-          />
+          >
+            <Menu wordPressUrl={url} />
+          </SlideMenu>
         </Flex>
       </Container>
-
-      <SlidingPanel
-        type={type}
-        isOpen={isOpen}
-        closeFunc={() => setIsOpen(false)}
-      >
-        <Menu wordPressUrl={url} />
-      </SlidingPanel>
     </StyledHeader>
   )
 }

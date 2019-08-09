@@ -22,9 +22,6 @@
   "dependencies": {
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
-    "@fortawesome/fontawesome-svg-core": "^1.2.20",
-    "@fortawesome/free-solid-svg-icons": "^5.10.0",
-    "@fortawesome/react-fontawesome": "^0.1.4",
     "@mdx-js/react": "^1.0.21",
     "@theme-ui/presets": "^0.2.25",
     "emotion": "^10.0.14",
@@ -36,9 +33,8 @@
     "gatsby-source-graphql": "^2.1.3",
     "gatsby-transformer-sharp": "^2.2.5",
     "moment": "^2.24.0",
-    "react-fontawesome": "^1.6.1",
+    "react-burger-menu": "^2.6.11",
     "react-helmet": "^5.2.1",
-    "react-sliding-panel": "^0.0.4",
     "theme-ui": "^0.2.2"
   },
   "keywords": [
