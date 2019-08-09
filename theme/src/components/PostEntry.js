@@ -6,7 +6,6 @@ import PostEntryMedia from './PostEntryMedia'
 import PostEntryContent from './PostEntryContent'
 import PostEntryMeta from './PostEntryMeta'
 import PostEntryInfo from './PostEntryInfo'
-import { links } from '../gatsby-plugin-theme-ui/components'
 
 const PostEntry = ({ post, location, postsPrefix }) => {
   return (

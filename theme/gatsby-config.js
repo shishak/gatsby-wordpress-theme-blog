@@ -1,6 +1,6 @@
 module.exports = options => {
   const {
-    wordPressUrl = `http://alexandraspalato.com/webstantly/`,
+    wordPressUrl = `http://alexandraspalato.com/gatsby/`,
     postsPath = `blog`,
     paginationPrefix = `/page`,
     postsPrefix = ``,

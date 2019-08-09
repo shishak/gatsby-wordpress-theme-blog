@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { Container, Footer as StyledFooter, jsx } from 'theme-ui'
+import FooterContent from './FooterContent'
 
 const Footer = () => (
   <StyledFooter sx={{ bg: `secondary`, color: 'white' }}>
@@ -17,9 +18,7 @@ const Footer = () => (
         },
       }}
     >
-      © {new Date().getFullYear()} | Built with{` `}
-      <a href="https://www.wpgraphql.com">WPGraphQL</a> and{` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
+      <FooterContent />
     </Container>
   </StyledFooter>
 )

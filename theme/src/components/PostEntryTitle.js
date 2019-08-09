@@ -15,9 +15,12 @@ const PostEntryTitle = ({ post, location, postsPrefix }) => {
           dangerouslySetInnerHTML={{ __html: title }}
         />
       ) : (
-        <Styled.h1 as="h2" className="entry-title">
+        <Styled.h1
+          as="h2"
+          className="entry-title"
+          sx={{ textTransform: `uppercase`, fontSize: [3, 4, 5] }}
+        >
           <Styled.a
-            sx={{ textTransform: `uppercase`, fontSize: [3, 4, 5] }}
             as={Link}
             to={`${postsPrefix}/${uri}`}
             dangerouslySetInnerHTML={{ __html: title }}
