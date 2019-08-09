@@ -23,11 +23,7 @@ const PostEntry = ({ post, location, postsPrefix }) => {
           postsPrefix={postsPrefix}
         />
         <PostEntryInfo className="entry-info" post={post} />
-        <PostEntryContent
-          location={location}
-          post={post}
-          // sx={{ a: { variant: links.decorated } }}
-        />
+        <PostEntryContent location={location} post={post} />
         <div className="entry-footer">
           <PostEntryMeta post={post} />
           {location !== 'single' && (
@@ -36,7 +32,6 @@ const PostEntry = ({ post, location, postsPrefix }) => {
                 variant: `buttons.secondary`,
                 py: `15px`,
                 display: `inline-block`,
-                ml: [0, 0, 5],
               }}
               to={`${postsPrefix}/${post.uri}`}
               aria-label="Read More from this post"

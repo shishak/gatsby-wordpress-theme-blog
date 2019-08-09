@@ -7,7 +7,15 @@ const Categories = ({ post }) => {
   return (
     <div sx={{ mb: 2 }}>
       {categories.length > 0 && (
-        <span sx={{ color: 'primary' }}>
+        <span
+          sx={{
+            color: 'muted',
+            fontSize: 1,
+            fontFamily: `heading`,
+            letterSpacing: 1,
+            mr: 1,
+          }}
+        >
           {categories.length > 1 ? 'Categories: ' : 'Category: '}
         </span>
       )}

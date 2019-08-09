@@ -2,5 +2,5 @@ import colors from "@alexadark/gatsby-theme-wordpress-blog/src/gatsby-plugin-the
 
 export default {
   ...colors,
-  // primary: "tomato",
+  primary: "tomato",
 }

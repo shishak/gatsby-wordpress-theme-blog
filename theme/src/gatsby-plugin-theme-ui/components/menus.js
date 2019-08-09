@@ -34,10 +34,10 @@ export const menus = {
         top: `45px`,
         p: 0,
         bg: `white`,
-        border: theme => `1px solid ${theme.colors.border}`,
+        border: t => `1px solid ${t.colors.muted}`,
         '>.menu-item': {
           width: `auto`,
-          borderBottom: `1px solid ${({ theme }) => theme.colors.muted}`,
+          borderBottom: t => `1px solid ${t.colors.muted}`,
           py: `5px`,
           px: `10px`,
           width: `180px`,

@@ -3,7 +3,6 @@ import { jsx, Styled } from 'theme-ui'
 import { graphql } from 'gatsby'
 import Layout from '../../components/Layout'
 import SEO from '../../components/Seo'
-import { Card } from '../../styles/elements'
 
 const Page = ({ data }) => {
   const { title, content, excerpt } = data.wpgraphql.page

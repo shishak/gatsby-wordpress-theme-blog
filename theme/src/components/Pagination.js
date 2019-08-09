@@ -1,11 +1,6 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
-import { Link } from "gatsby"
-import {
-  Pagination as StyledPagination,
-  PageNumbers,
-  PrevNextLinks,
-} from "../styles/elements"
+import { jsx } from 'theme-ui'
+import { Link } from 'gatsby'
 
 const Pagination = ({
   pageNumber,
@@ -17,9 +12,9 @@ const Pagination = ({
 }) => {
   const isLast = pageNumber === allPosts / itemsPerPage
   return (
-    <StyledPagination>
+    <div sx={{ variant: `pagination` }}>
       {pageNumber > 1 && (
-        <PrevNextLinks>
+        <div sx={{ variant: `paginationLinks` }}>
           {pageNumber !== 1 ? (
             <Link
               to={
@@ -32,12 +27,12 @@ const Pagination = ({
             </Link>
           ) : (
             <>
-              <div sx={{ color: "muted" }}> ← Prev</div>
+              <div sx={{ color: 'muted' }}> ← Prev</div>
             </>
           )}
-        </PrevNextLinks>
+        </div>
       )}
-      <PageNumbers>
+      <div sx={{ variant: `pageNumbers` }}>
         <nav role="navigation" aria-label="Pagination Navigation">
           <ul>
             {Array.from({ length: allPosts.length / itemsPerPage }, (_, i) => (
@@ -56,19 +51,19 @@ const Pagination = ({
             ))}
           </ul>
         </nav>
-      </PageNumbers>
+      </div>
       {hasNextPage && (
-        <PrevNextLinks>
+        <div sx={{ variant: `paginationLinks` }}>
           {!isLast ? (
             <Link to={`${postsPath}/${paginationPrefix}/${pageNumber + 1}`}>
               Next →
             </Link>
           ) : (
-            <div sx={{ color: "muted" }}> Next →</div>
+            <div sx={{ color: 'muted' }}> Next →</div>
           )}
-        </PrevNextLinks>
+        </div>
       )}
-    </StyledPagination>
+    </div>
   )
 }
 

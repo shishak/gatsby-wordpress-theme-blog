@@ -15,9 +15,9 @@ export const fontWeights = {
 }
 
 export const fontSizes = [
-  '1.4rem',
+  '1.2rem',
   '1.6rem',
-  '2rem',
+  '1.8rem',
   '2.4rem',
   '3rem',
   '3.6rem',
@@ -47,25 +47,6 @@ const heading = {
   letterSpacing: 1,
   a: {
     borderBottom: 'none',
-  },
-}
-
-export const LinkEffect = {
-  position: 'relative',
-  '&:before': {
-    content: '',
-    width: '50%',
-    height: '50px',
-    bg: 'primary',
-    opacity: 0.3,
-    position: 'absolute',
-    left: '-5px',
-    bottom: 0,
-  },
-  '&:hover': {
-    '&:before': {
-      width: '110%',
-    },
   },
 }
 
@@ -114,4 +95,18 @@ export const h6 = {
   color: 'muted',
   fontSize: 1,
   mb: 2,
+}
+
+export const base = {
+  ...tailwind.styles.root,
+  fontSize: [1, 2],
+  color: `text`,
+  a,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
 }

@@ -1,10 +1,10 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from 'theme-ui'
 
-import { graphql } from "gatsby"
-import PostEntry from "../../components/PostEntry"
-import Layout from "../../components/Layout"
-import SEO from "../../components/Seo"
+import { graphql } from 'gatsby'
+import PostEntry from '../../components/PostEntry'
+import Layout from '../../components/Layout'
+import SEO from '../../components/Seo'
 
 const Tag = ({ data, pageContext }) => {
   const { name, posts } = data.wpgraphql.tag
@@ -13,16 +13,17 @@ const Tag = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title={name} description={`Posts for ${name} tag`} />
-      <h1
+      <Styled.h2
+        as="h1"
         sx={{
-          textAlign: "center",
+          textAlign: 'center',
           mb: 4,
-          textTransform: "uppercase",
+          textTransform: 'uppercase',
           fontSize: 5,
         }}
       >
         Tag {name}
-      </h1>
+      </Styled.h2>
       {posts.nodes &&
         posts.nodes.map(post => (
           <PostEntry

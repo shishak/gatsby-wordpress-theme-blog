@@ -13,10 +13,18 @@ const Layout = ({ children }) => (
   <>
     <Global styles={GlobalStyles} />
 
-    <StyledLayout sx={{ bg: `background` }}>
-      <Header />
+    <StyledLayout
+      sx={{
+        bg: `background`,
+        display: `flex`,
+        flexDirection: `columns`,
+        minHeight: `100vh`,
+        justifyContent: `space-between`,
+      }}
+    >
+      <Header sx={{ width: `100%`, flex: `1 1 auto` }} />
       <Container sx={{ maxWidth: `l` }}>{children}</Container>
-      <Footer />
+      <Footer sx={{ width: `100%` }} />
     </StyledLayout>
   </>
 )

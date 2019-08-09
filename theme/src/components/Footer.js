@@ -5,8 +5,9 @@ const Footer = () => (
   <StyledFooter sx={{ bg: `secondary`, color: 'white' }}>
     <Container
       sx={{
-        maxWidth: 'large',
+        maxWidth: `l`,
         textAlign: 'center',
+        fontSize: 1,
         a: {
           color: 'muted',
           textDecoration: 'underline',

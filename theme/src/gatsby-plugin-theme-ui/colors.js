@@ -5,7 +5,7 @@ export default {
   secondary: tailwind.colors.blue[9],
   background: tailwind.colors.light,
   textMuted: `#667488`,
-  text: tailwind.colors.gray[8],
+  text: `#444`,
   grayDark: tailwind.colors.gray[9],
   dark: tailwind.colors.gray[7],
   muted: tailwind.colors.gray[5],
