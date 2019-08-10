@@ -28,13 +28,13 @@ const Header = () => {
       <StyledHeader
         sx={{
           bg: `white`,
-          borderBottom: `1px solid #ddd`,
+
+          boxShadow: `default`,
           '.bm-burger-button': {
             position: 'relative',
             width: '20px',
             height: '20px',
             right: '36px',
-            // top: '20px',
             display: ['block', 'block', 'none'],
 
             ':hover': {

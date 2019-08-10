@@ -1,7 +1,7 @@
 import { tailwind } from '@theme-ui/presets'
 export default {
   ...tailwind.colors,
-  primary: tailwind.colors.pink[6],
+  primary: `tomato`,
   secondary: tailwind.colors.blue[9],
   background: tailwind.colors.light,
   textMuted: `#667488`,

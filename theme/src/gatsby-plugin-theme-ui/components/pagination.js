@@ -18,13 +18,14 @@ export const pageNumbers = {
   a: {
     py: `5px`,
     px: 1,
-    bg: `#f5f5f5`,
+    variant: `gradients.secondary`,
+    borderRadius: `100%`,
     border: `none`,
     mr: `5px`,
-    color: `text`,
+    color: `white`,
+    transition: `all .4s ease-in-out`,
     '&:hover, &[aria-current="page"]': {
-      bg: `black`,
-      color: `white`,
+      variant: `gradients.primary`,
     },
   },
 }

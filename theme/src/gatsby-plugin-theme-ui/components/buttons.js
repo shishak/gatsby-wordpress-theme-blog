@@ -17,8 +17,7 @@ export const buttons = {
   primary: {
     ...sharedButtonStyles,
     borderRadius: 5,
-    backgroundImage: t =>
-      `linear-gradient(45deg, ${t.colors.primary}, ${t.colors.purple[7]})`,
+    variant: `gradients.primary`,
     fontSize: 1,
     px: 2,
     py: 1,
@@ -26,8 +25,7 @@ export const buttons = {
   secondary: {
     ...sharedButtonStyles,
     borderRadius: 5,
-    backgroundImage: t =>
-      `linear-gradient(45deg, ${t.colors.secondary}, ${t.colors.purple[6]})`,
+    variant: `gradients.secondary`,
     fontSize: 1,
     px: 2,
     py: 1,

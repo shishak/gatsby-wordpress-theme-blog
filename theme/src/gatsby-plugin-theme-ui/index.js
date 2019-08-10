@@ -12,6 +12,7 @@ import {
   pagination,
   paginationLinks,
   pageNumbers,
+  gradients,
 } from './components'
 
 export default {
@@ -25,6 +26,7 @@ export default {
   sizes,
   shadows: {
     ...tailwind.shadows,
+    default: `0px 1px 10px rgba(0,0,0,0.05)`,
     hover: `0px 10px 20px rgba(0,0,0,0.25)`,
   },
 
@@ -55,4 +57,5 @@ export default {
   pagination,
   paginationLinks,
   pageNumbers,
+  gradients,
 }
