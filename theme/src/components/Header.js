@@ -24,7 +24,7 @@ const Header = () => {
   const { title, url } = data.wpgraphql.generalSettings
 
   return (
-    <Headroom>
+    <Headroom sx={{}}>
       <StyledHeader
         sx={{
           bg: `white`,
@@ -69,6 +69,7 @@ const Header = () => {
                 bg: `secondary`,
                 color: `primary`,
                 top: 0,
+                height: `100vh !important`,
 
                 a: {
                   color: `white`,
