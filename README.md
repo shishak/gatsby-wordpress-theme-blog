@@ -52,7 +52,10 @@ To use this theme in your Gatsby sites, follow these instructions:
 ## Options
 
 `wordPressUrl` - source site.
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6bf02b2210cf5a8cac6989105e8e65931de37bd1
 `postsPath` - the path for your posts, let it empty if you want them as home page
 in your WordPress installation if you want the blog as home page, then make sure to not have any page with slug 'home'.
 if you want the blog to another page, then create a custom link in your menu, with the postsPath as url (example : /blog), and make sure to not have any page with slug = postsPath
@@ -64,7 +67,11 @@ create a page with slug: 'home' in this case
 
 `postsPrePage`
 
+<<<<<<< HEAD
 ## Features
+=======
+##Features
+>>>>>>> 6bf02b2210cf5a8cac6989105e8e65931de37bd1
 
 - 2 levels menu
 - pagination on posts page
