@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `http://3.123.87.137.xip.io/`,
+  wordPressUrl: `http://alexandraspalato.com/gatsby/`,
 }
 
 module.exports = config
