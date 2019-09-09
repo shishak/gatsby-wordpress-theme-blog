@@ -1,6 +1,6 @@
 module.exports = options => {
   const {
-    wordPressUrl = `http://alexandraspalato.com/gatsby/`,
+    wordPressUrl = `http://3.123.87.137.xip.io/`,
     postsPath = `blog`,
     paginationPrefix = `/page`,
     postsPrefix = ``,
