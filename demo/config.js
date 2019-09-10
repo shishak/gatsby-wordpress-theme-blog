@@ -1,5 +1,5 @@
 const config = {
-  wordPressUrl: `http://api2.texty.xyz/`,
+  wordPressUrl: `http://18.204.169.216`,
 }
 
 module.exports = config
